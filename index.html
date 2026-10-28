@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1136,7 +1136,7 @@ header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.
 .hv-name .ln.out:hover>span{-webkit-text-fill-color:var(--d);-webkit-text-stroke-color:var(--d)}
 @keyframes hvup{from{transform:translateY(105%)}to{transform:none}}
 .hv-roles li{border-radius:12px}
-.hv-roles button{font-size:.95rem;padding:.65rem 1.1rem}
+.hv-roles{flex-wrap:nowrap;gap:.4rem}.hv-roles button{font-size:.8rem;padding:.5rem .75rem;white-space:nowrap}.hv-g{gap:clamp(1rem,3vw,2.5rem)}
 .hv-cta{margin-top:.4rem}
 .hvp{width:auto;justify-self:center;position:relative;height:clamp(240px,min(52vh,60vw),430px);aspect-ratio:3/4;margin:0}
 .hvp::before{display:none}
@@ -1154,6 +1154,26 @@ header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.
 .wk.s7{grid-column:span 4}
 @media(max-width:900px){.wk.s7{grid-column:span 2}}
 @media(max-width:520px){.wk.s7{grid-column:span 1}}
+
+/* ══ v32: livelier hero ══ */
+.hv-bg{-webkit-mask-image:none;mask-image:none;background-image:radial-gradient(color-mix(in srgb,var(--tx) 14%,transparent) 1.2px,transparent 1.2px)}
+.hv-bg i{opacity:.4}
+.hv-big{position:absolute;left:0;right:0;bottom:clamp(2.5rem,7vh,5rem);z-index:0;text-align:center;white-space:nowrap;font:800 clamp(4rem,15vw,15rem)/1 var(--sans);text-transform:uppercase;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--tx) 14%,transparent);pointer-events:none;user-select:none;overflow:hidden}
+.hv-name .ln:first-child>span{background:linear-gradient(100deg,var(--d),#FF7A59 60%,var(--t));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hv-roles li{background:color-mix(in srgb,var(--c) 12%,var(--bg));border-color:color-mix(in srgb,var(--c) 45%,transparent)}
+.hv-roles li.on{background:var(--c)}.hv-roles li.on button,.hv-roles li.on .mono{color:#0A0E1D}
+.hvp{margin-inline:clamp(.5rem,1vw,1rem) clamp(3rem,10vw,9rem)}
+.hv-card{position:absolute;z-index:1;display:block;height:auto;width:clamp(150px,17vw,250px);border-radius:12px;overflow:hidden;border:3px solid var(--tx);background:var(--bg2);box-shadow:0 24px 50px -20px rgba(0,0,0,.55);transition:transform .5s var(--ease)}
+.hv-card i{display:block;height:14px;background:var(--tx);opacity:.9}
+.hv-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.hv-card.k1{right:-58%;top:6%;transform:rotate(5deg);width:clamp(170px,19vw,280px);animation:fl 7s ease-in-out infinite}
+.hv-card.k2{right:-48%;bottom:4%;transform:rotate(-5deg);z-index:3;animation:fl 8s ease-in-out infinite -3s}
+.hv-card.k3{left:-20%;bottom:-3%;z-index:0;transform:rotate(-3deg);width:clamp(130px,14vw,210px);animation:fl 9s ease-in-out infinite -5s}
+.hv-card:hover{transform:rotate(0) scale(1.06);z-index:5}
+.hv-ring{left:-10%;right:auto;top:-5%}
+@media(max-width:900px){.hv-roles{flex-wrap:wrap}.hvp{margin-inline:auto}.hv-card.k1{right:-30%}.hv-card.k2{right:-26%}.hv-card.k3{display:none}.hv-big{bottom:3rem}}
+@media(max-width:520px){.hv-card{width:110px}.hv-card.k1{right:-24%}.hv-card.k2{right:-20%}.hv-ring{display:none}}
+@media(prefers-reduced-motion:reduce){.hv-card{animation:none}}
 </style>
 </head>
 <body>
@@ -1168,19 +1188,19 @@ header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.
 </div></nav>
 
 <div class="pg on" id="home"><header class="hero hv" id="top">
-  <div class="hv-bg" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+  <div class="hv-bg" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div><div class="hv-big" aria-hidden="true">Design · Build · Test</div>
   <div class="w"><div class="hv-g">
     <div class="hv-l">
       <h1 class="hv-name" aria-label="Gwen Basconcillo"><span class="ln"><span>Gwen</span></span><span class="ln out"><span>Basconcillo</span></span></h1>
       <ol class="hv-roles" aria-label="What I do">
         <li style="--c:var(--d)"><button type="button"><span class="mono">01</span>UI/UX Designer</button><i></i></li>
-        <li style="--c:var(--b)"><button type="button"><span class="mono">02</span>Front-End & Web Developer</button><i></i></li>
+        <li style="--c:var(--b)"><button type="button"><span class="mono">02</span>Front-End Developer</button><i></i></li>
         <li style="--c:var(--t)"><button type="button"><span class="mono">03</span>QA Tester</button><i></i></li>
       </ol>
       <div class="hv-cta"><a href="#contact" class="btn f" data-mag>Start your project →</a><a href="#portfolio" class="btn" data-mag>See my work</a><a href="assets/Basconcillo_Resume.pdf" target="_blank" rel="noopener" class="hv-link">Résumé ↓</a></div>
     </div>
     <figure class="hvp" id="photo" data-s="0">
-      <span class="hv-sh s1" aria-hidden="true"></span><span class="hv-sh s2" aria-hidden="true"></span><span class="hv-sh s3" aria-hidden="true"></span>
+      <a class="hv-card k1" href="#portfolio" aria-label="See GALÁ"><i></i><img src="assets/gala-preview.jpg" alt=""></a><a class="hv-card k2" href="#portfolio" aria-label="See DailyDrive"><i></i><img src="assets/dailydrive-preview.png" alt=""></a><a class="hv-card k3" href="#portfolio" aria-label="See RM’S Inventory"><i></i><img src="assets/rms-preview.jpg" alt=""></a><span class="hv-sh s3" aria-hidden="true"></span>
       <div class="fr"><img id="meImg" alt="Gwen Basconcillo" hidden><div class="ph" id="mePh"><svg viewBox="0 0 100 100" fill="currentColor" style="color:var(--tx)"><circle cx="50" cy="34" r="17"/><path d="M14 92c2-24 16-36 36-36s34 12 36 36z"/></svg></div></div>
       <svg class="hv-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs><text><textPath href="#rp" textLength="496" lengthAdjust="spacing">DESIGN ✦ BUILD ✦ TEST ✦ DESIGN ✦ BUILD ✦ TEST ✦ </textPath></text></svg>
     </figure>
@@ -1203,8 +1223,8 @@ header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.
         <h3>GALÁ <em>— Explore. Enjoy.</em></h3>
         <p>A live travel-discovery site for Puerto Galera, Oriental Mindoro. Visitors search or browse 60 places across beaches, dive sites, waterfalls and heritage spots, with an interactive map, events, a travel guide, responsible-travel tips, a feedback form and an “Ask Gali” assistant.</p>
         <ul class="gx-f"><li><b>60</b>places</li><li><b>12</b>beaches</li><li><b>23</b>dive sites</li></ul>
-        <div class="stack"><span>Search</span><span>Interactive map</span><span>Travel guide</span><span>AI assistant</span></div>
-        <div class="acts"><a class="btn f" href="https://gala.freedev.app/" target="_blank" rel="noopener" data-mag>Visit live site ↗</a></div>
+        <div class="stack"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Staff dashboard</span></div>
+        <div class="acts" style="display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center"><a class="btn f" href="https://gala.freedev.app/" target="_blank" rel="noopener" data-mag>Visit live site ↗</a><a class="more" href="https://github.com/oncepebrero/GALA-Puerto-Galera" target="_blank" rel="noopener">Repository ↗</a></div>
       </div>
     </div>
   </article>
@@ -1385,7 +1405,7 @@ const ART=[plates[0],plates[1],plates[2],plates[3],
  W(R(0,0,800,500,'#293462',0)+R(170,90,460,320,'#D61C4E',14,.75)+'<rect x="170" y="90" width="460" height="320" rx="14" fill="none" stroke="#1CD6CE" stroke-width="5" stroke-dasharray="14 10"/>'+R(170,50,190,40,'#1CD6CE',6)+'<text x="190" y="78" font-family="monospace" font-size="22" fill="#0A0E1D">FRESH 94%</text><circle cx="400" cy="250" r="80" fill="#FEDB39" fill-opacity=".55"/>'),
  W(R(0,0,800,500,'#0A0E1D',0)+[...Array(12)].map((_,i)=>R(110+i%4*140,80+(i/4|0)*120,126,106,['#D61C4E','#1CD6CE','#FEDB39','#293462'][(i*5)%4],10,i===6?0:.9)).join(''))];
 const lb=$('#lb');
-function openLb(i){const p=P[i],d=DOC[i];$('#lbi').innerHTML=`<div class="lbg"><div class="big2 pvb">${ART[i]}${imgTag(i)}</div><div class="lbt"><h3>${p[0]}</h3><p class="mono" style="margin-bottom:.8rem">${p[2]} · ${p[1]} · ${p[5]}</p><p style="max-width:60ch">${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div>${STORY[i]?`<div class="lbstory">${STORY[i]}</div>`:''}<div class="acts">${d?`<button class="more" onclick="openDoc('${d[0]}','${d[1]}','${d[2]}')">Open PDF ↗</button>`:''}${i===7?'<a class="more" href="https://gala.freedev.app/" target="_blank" rel="noopener">Visit live site ↗</a>':''}${i===2?'<a class="more" href="https://github.com/oncepebrero/SafePath" target="_blank" rel="noopener">Repository ↗</a>':''}</div></div></div>`;lb.classList.add('open');setTimeout(()=>$('#lbx').focus(),50)}
+function openLb(i){const p=P[i],d=DOC[i];$('#lbi').innerHTML=`<div class="lbg"><div class="big2 pvb">${ART[i]}${imgTag(i)}</div><div class="lbt"><h3>${p[0]}</h3><p class="mono" style="margin-bottom:.8rem">${p[2]} · ${p[1]} · ${p[5]}</p><p style="max-width:60ch">${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div>${STORY[i]?`<div class="lbstory">${STORY[i]}</div>`:''}<div class="acts">${d?`<button class="more" onclick="openDoc('${d[0]}','${d[1]}','${d[2]}')">Open PDF ↗</button>`:''}${i===7?'<a class="more" href="https://gala.freedev.app/" target="_blank" rel="noopener">Visit live site ↗</a>':''}${i===7?'<a class="more" href="https://github.com/oncepebrero/GALA-Puerto-Galera" target="_blank" rel="noopener">Repository ↗</a>':''}${i===2?'<a class="more" href="https://github.com/oncepebrero/SafePath" target="_blank" rel="noopener">Repository ↗</a>':''}</div></div></div>`;lb.classList.add('open');setTimeout(()=>$('#lbx').focus(),50)}
 function openLbImg(src,cap){$('#lbi').innerHTML=`<div class="big2"><img src="${src}" alt="${cap}" style="width:100%;height:100%;object-fit:contain;background:var(--bg2)"></div><h3>${cap}</h3>`;lb.classList.add('open');setTimeout(()=>$('#lbx').focus(),50)}
 function closeLb(){lb.classList.remove('open')}
 $('#lbx').onclick=closeLb;lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
@@ -1394,7 +1414,7 @@ const IMGS=['assets/rms-preview.jpg','assets/dailydrive-preview.png','assets/saf
 const DOC={0:['assets/rms-capstone.pdf','RM’S — Capstone Project','186 pages · Full capstone documentation'],1:['assets/dailydrive-manual.pdf','DailyDrive — User Manual','21 pages · User & Admin guide']};
 const imgTag=i=>`<img class="pi" src="${IMGS[i]}" alt="${P[i][0]}" loading="lazy" onerror="this.remove()">`;
 const COL=['--d','--b','--t'];
-P.push(['GALÁ — Explore. Enjoy.','2026','Live website','Tourism discovery site for Puerto Galera with 60 places, an interactive map, events, a travel guide and an “Ask Gali” assistant.','Search · Interactive map · Travel guide · AI assistant','Live']);ART[7]=W(R(0,0,800,500,'#0E6F8C',0));IMGS[7]='assets/gala-preview.jpg';
+P.push(['GALÁ — Explore. Enjoy.','2026','Live website','Tourism discovery site for Puerto Galera with 60 places, an interactive map, events, a travel guide and an “Ask Gali” assistant.','PHP · MySQL · JavaScript · Staff dashboard','Live']);ART[7]=W(R(0,0,800,500,'#0E6F8C',0));IMGS[7]='assets/gala-preview.jpg';
 $('#wl').innerHTML=P.map((p,i)=>`<li class="wk s${i}" style="--i:${i};--c:var(${COL[i%3]})"><button class="wk-in" onclick="openLb(${i})" aria-label="Open ${p[0]}"><div class="wk-art">${ART[i]}${imgTag(i)}</div><div class="wk-top"><span class="wk-n">${String(i+1).padStart(2,'0')}</span><span class="st mono">${p[5]}</span></div><div class="wk-b"><h3>${p[0]}</h3><p class="mono">${p[2]} · ${p[1]}</p><div class="wk-x"><div><p>${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div></div></div></div></button></li>`).join('');
 
 // ── living name ──
