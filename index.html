@@ -1246,6 +1246,9 @@ nav .w{max-width:1600px;padding:0 clamp(1.2rem,4vw,4.5rem)}
 .bn h3{font-size:1.75rem;font-style:italic;font-weight:300}
 .tools{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.9rem}
 .tools li{font:500 .72rem var(--mono);border:1px solid var(--ln);border-radius:6px;padding:.2rem .55rem;color:var(--tx2)}
+.aitools{display:flex;align-items:center;gap:1rem 1.4rem;flex-wrap:wrap;margin-top:clamp(.8rem,1.6vw,1.4rem);padding:1rem 1.2rem;border:1px solid var(--ln);border-radius:14px;background:var(--bg2)}
+.aitools .tools{margin:0;padding:0}
+.aitools .tools li{border-color:color-mix(in srgb,var(--b) 45%,var(--ln))}
 .dv .fm{position:absolute;left:10%;top:26%;width:56%;height:54%;border:1.5px solid var(--c)}
 .fm i{position:absolute;width:8px;height:8px;background:var(--bg);border:1.5px solid var(--c)}
 .fm i:nth-child(1){left:-5px;top:-5px}.fm i:nth-child(2){right:-5px;top:-5px}.fm i:nth-child(3){left:-5px;bottom:-5px}.fm i:nth-child(4){right:-5px;bottom:-5px}
@@ -1428,7 +1431,7 @@ nav .w{max-width:1600px;padding:0 clamp(1.2rem,4vw,4.5rem)}
   <div class="bench rv">
     <article class="bn" style="--c:var(--d)"><div class="bn-h"><span><i></i>Design</span><span class="mono">Canvas</span></div>
       <div class="bn-v dv"><span class="fm"><i></i><i></i><i></i><i></i><em>Frame · 1440 × 900</em><b></b><b></b></span><span class="sw"><u style="background:var(--d)"></u><u style="background:var(--b)"></u><u style="background:var(--t)"></u></span></div>
-      <div class="bn-b"><h3>UI/UX &amp; Brand</h3><p>Flows, wireframes, interactive prototypes, logos and mockups.</p><ul class="tools"><li>Canva</li><li>Visual Paradigm</li><li>Picsart</li></ul></div></article>
+      <div class="bn-b"><h3>UI/UX &amp; Brand</h3><p>Flows, wireframes, interactive prototypes, logos and mockups.</p><ul class="tools"><li>Framer</li><li>Visual Paradigm</li><li>Canva</li><li>Picsart/Snapseed</li><li>CapCut</li></ul></div></article>
     <article class="bn" style="--c:var(--b)"><div class="bn-h"><span><i></i>Build</span><span class="mono">Editor</span></div>
       <pre class="bn-v cv"><span class="k">.card</span> {
   <span class="a">display</span>: <span class="s">grid</span>;
@@ -1437,11 +1440,12 @@ nav .w{max-width:1600px;padding:0 clamp(1.2rem,4vw,4.5rem)}
 <span class="k">@media</span> (max-width: 600px) {
   <span class="k">.card</span> { <span class="a">padding</span>: <span class="s">1rem</span>; }
 }</pre>
-      <div class="bn-b"><h3>Front-end &amp; Web Development</h3><p>Responsive interfaces and the systems behind them.</p><ul class="tools"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>PHP</li><li>Python</li><li>C#</li><li>Bootstrap</li><li>MySQL</li><li>Wix</li><li>Shopify</li><li>Git</li></ul></div></article>
+      <div class="bn-b"><h3>Front-end &amp; Web Development</h3><p>Responsive interfaces and the systems behind them.</p><ul class="tools"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>PHP</li><li>Python</li><li>C#</li><li>Bootstrap</li><li>MySQL</li><li>Wix</li><li>Shopify</li><li>XAMPP</li><li>Git</li></ul></div></article>
     <article class="bn" style="--c:var(--t)"><div class="bn-h"><span><i></i>Test</span><span class="mono">Test run</span></div>
       <div class="bn-v tv"><p>Form rejects an empty email</p><p>Menu opens on mobile</p><p class="no">Button overlaps footer at 320px<em>bug logged</em></p></div>
       <div class="bn-b"><h3>QA &amp; Documentation</h3><p>Reproducible bugs and docs the next person can actually use.</p><ul class="tools"><li>Manual test case design</li><li>Bug reporting</li><li>Technical documentation</li></ul></div></article>
   </div>
+  <div class="aitools rv" aria-label="AI tools I use"><span class="mono">AI tools I work with</span><ul class="tools"><li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>DeepSeek</li><li>Cursor</li><li>Lovable AI</li></ul></div>
   <div class="pl-h rv" id="plh"><h3>How it <em>gets made.</em></h3><span class="ok">✓ QA passed</span></div>
   <div class="pl rv" id="proc">
     <div style="--c:var(--d)"><span class="mono">Design</span><h3>Discover</h3><p>Requirements, users and pain points before any pixels.</p></div>
