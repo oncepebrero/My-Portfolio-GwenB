@@ -1,4 +1,4 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1174,6 +1174,60 @@ header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.
 @media(max-width:900px){.hv-roles{flex-wrap:wrap}.hvp{margin-inline:auto}.hv-card.k1{right:-30%}.hv-card.k2{right:-26%}.hv-card.k3{display:none}.hv-big{bottom:3rem}}
 @media(max-width:520px){.hv-card{width:110px}.hv-card.k1{right:-24%}.hv-card.k2{right:-20%}.hv-ring{display:none}}
 @media(prefers-reduced-motion:reduce){.hv-card{animation:none}}
+
+/* ══ v33: full-page hero + new selected-work grid ══ */
+header.hv.hero{height:100svh;min-height:600px;padding:0;display:flex;flex-direction:column;justify-content:flex-start}
+header.hv.hero>.w{max-width:1600px;width:100%;flex:1;min-height:0;display:flex;align-items:center;padding:clamp(4.6rem,10vh,6.2rem) clamp(1.2rem,4vw,4.5rem) clamp(.6rem,2vh,1.4rem)}
+.hv-g{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(1rem,3vw,3rem);height:100%;align-content:center}
+.hv-l{gap:clamp(1rem,3.4vh,2.2rem);justify-content:center}
+.hv-name{font-size:var(--nfs,clamp(3rem,8vw,8rem));line-height:.88;letter-spacing:-.055em;width:100%}
+.hv-roles button{font-size:clamp(.85rem,1.1vw,1.05rem);padding:.7rem 1.15rem}
+.hv-cta .btn{font-size:clamp(.78rem,1vw,.92rem);padding:1.1rem 2rem}
+.hv-link{font-size:.9rem}
+.hvp{height:clamp(300px,66svh,780px);margin:0;justify-self:start}
+.hv-card{width:clamp(190px,19vw,340px)}
+.hv-card.k1{right:-44%;top:4%;width:clamp(200px,20vw,350px)}
+.hv-card.k2{right:-38%;bottom:6%;width:clamp(180px,18vw,310px)}
+.hv-card.k3{left:-16%;bottom:-2%;width:clamp(150px,14vw,240px)}
+.hv-ring{width:clamp(110px,10vw,160px);left:-9%;top:-3%}
+.hv-big{bottom:clamp(2rem,6vh,4rem);font-size:clamp(5rem,17vw,19rem)}
+@media(max-width:900px){
+ header.hv.hero{height:auto;min-height:100svh}
+ header.hv.hero>.w{padding-top:5.2rem;padding-bottom:1.5rem}
+ .hv-g{grid-template-columns:1fr;height:auto;gap:2rem}
+ .hvp{height:clamp(260px,42svh,420px);justify-self:center}
+ .hv-card.k1{right:-30%}.hv-card.k2{right:-26%}.hv-card.k3{display:none}
+ .hv-card{width:clamp(130px,30vw,220px)}
+ .hv-roles{flex-wrap:wrap}
+}
+@media(max-width:520px){.hv-card{width:110px}.hv-card.k1{right:-22%}.hv-card.k2{right:-18%}}
+
+nav .w{max-width:1600px;padding:0 clamp(1.2rem,4vw,4.5rem)}
+.hv-card.k1{right:-36%}.hv-card.k2{right:-32%}
+/* selected work grid */
+.swg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.6rem);align-items:stretch}
+.swc{--c:var(--b);position:relative;display:flex;flex-direction:column;border:1px solid var(--ln);border-top:4px solid var(--c);border-radius:22px;overflow:hidden;background:var(--bg2);transition:transform .5s var(--ease),box-shadow .5s,border-color .3s}
+.swc:hover{transform:translateY(-8px);box-shadow:0 34px 60px -34px rgba(0,0,0,.55)}
+.swp{position:relative;aspect-ratio:16/11;overflow:hidden;cursor:pointer;background:#0A0E1D}
+.swp img,.swp svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
+.swp svg{z-index:0}.swp img{z-index:1}
+.swc:hover .swp img,.swc:hover .swp svg{transform:scale(1.06)}
+.swp::after{content:'View ↗';position:absolute;z-index:3;right:.9rem;bottom:.9rem;background:var(--tx);color:var(--bg);font:600 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:.45rem .85rem;border-radius:99px;opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
+.swc:hover .swp::after{opacity:1;transform:none}
+.swn{position:absolute;z-index:3;left:.9rem;top:.9rem;font:700 .74rem var(--mono);background:var(--c);color:#0A0E1D;padding:.3rem .7rem;border-radius:99px}
+.swi{display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.4rem 1.5rem;flex:1}
+.swi .tag{align-self:flex-start;position:static;border:1px solid var(--ln);border-radius:99px;padding:.2rem .7rem;color:var(--tx2);background:none}
+.swi .tx{display:flex;flex-direction:column;gap:.35rem}
+.swi .tx .mono{color:var(--c);filter:brightness(.85)}
+.swi h3{font-size:clamp(1.5rem,2.3vw,2.1rem);color:var(--tx);margin:0;letter-spacing:-.03em}
+.swi p{font-size:.92rem;line-height:1.6;color:var(--tx2)}
+.swi .mt{margin-top:auto;padding-top:.4rem}
+.swi .stack{margin:.4rem 0 .8rem}
+.swi .acts{margin-top:0}
+.swc .story{display:none}
+.gx{margin-bottom:clamp(1rem,2vw,1.6rem)}
+@media(max-width:1000px){.swg{grid-template-columns:repeat(2,minmax(0,1fr))}.swg .swc:last-child{grid-column:1/-1}}
+@media(max-width:640px){.swg{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1229,24 +1283,24 @@ header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.
     </div>
   </article>
 
-  <div class="stk"><article class="case rv">
-    <div class="plate"><img src="assets/rms-preview.jpg" alt="RM Distribution wholesale website" onerror="this.remove()">
+  <div class="swg"><article class="swc rv" style="--c:var(--b)">
+    <div class="swp"><span class="swn">01</span><img src="assets/rms-preview.jpg" alt="RM Distribution wholesale website" onerror="this.remove()">
       <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><rect width="800" height="500" fill="#293462"/><g fill="#1CD6CE" opacity=".85"><rect x="120" y="290" width="46" height="120"/><rect x="200" y="240" width="46" height="170"/><rect x="280" y="270" width="46" height="140"/><rect x="360" y="190" width="46" height="220"/><rect x="440" y="220" width="46" height="190"/></g><g fill="#D61C4E" opacity=".9"><rect x="520" y="150" width="46" height="260"/><rect x="600" y="110" width="46" height="300"/></g><polyline points="140,280 220,230 300,255 380,175 460,200 540,130 620,90" fill="none" stroke="#FEDB39" stroke-width="3" stroke-dasharray="8 8"/><circle cx="620" cy="90" r="8" fill="#FEDB39"/></svg></div>
-    <div class="info"><div class="no">01</div><span class="tag mono">Capstone · 2025</span><div class="tx"><span class="mono">UI/UX · QA · Tech writing</span><h3>RM’S Inventory</h3><p>AI-assisted inventory &amp; e-commerce system with real-time demand forecasting, built for a live retail client, REMHART.</p></div><div class="mt"><div class="stack"><span>PHP</span><span>JavaScript</span><span>MySQL</span><span>AI</span></div><div class="acts"><button class="more" onclick="openDoc('assets/rms-capstone.pdf','RM’S — Capstone Project','186 pages · Full capstone documentation')">Capstone PDF · 186 pp ↗</button></div></div></div>
+    <div class="swi"><span class="tag mono">Capstone · 2025</span><div class="tx"><span class="mono">UI/UX · QA · Tech writing</span><h3>RM’S Inventory</h3><p>AI-assisted inventory &amp; e-commerce system with real-time demand forecasting, built for a live retail client, REMHART.</p></div><div class="mt"><div class="stack"><span>PHP</span><span>JavaScript</span><span>MySQL</span><span>AI</span></div><div class="acts"><button class="more" onclick="openDoc('assets/rms-capstone.pdf','RM’S — Capstone Project','186 pages · Full capstone documentation')">Capstone PDF · 186 pp ↗</button></div></div></div>
     <div class="story" id="s1"><div><ul><li><b>Problem</b>Stock, sales and orders tracked by hand, with no way to see a stock-out coming.</li><li><b>Approach</b>Gathered requirements with the client, then wireframes and schema before any code.</li><li><b>Outcome</b>A working system with a dashboard non-technical staff can read, tested before handoff.</li></ul></div></div>
   </article>
 
-  <article class="case rv">
-    <div class="plate"><img src="assets/dailydrive-preview.png" alt="DailyDrive dashboard" onerror="this.remove()">
+  <article class="swc rv" style="--c:var(--d)">
+    <div class="swp"><span class="swn">02</span><img src="assets/dailydrive-preview.png" alt="DailyDrive dashboard" onerror="this.remove()">
       <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><rect width="800" height="500" fill="#0D1226"/><g fill="none" stroke="#EFEBE3" stroke-opacity=".25" stroke-width="2"><rect x="110" y="110" width="360" height="60" rx="30"/><rect x="110" y="200" width="360" height="60" rx="30"/><rect x="110" y="290" width="360" height="60" rx="30"/></g><circle cx="140" cy="140" r="16" fill="#1CD6CE"/><circle cx="140" cy="230" r="16" fill="#1CD6CE"/><circle cx="140" cy="320" r="16" fill="none" stroke="#FEDB39" stroke-width="3"/><circle cx="600" cy="250" r="110" fill="none" stroke="#293462" stroke-width="22"/><path d="M600 140a110 110 0 1 1-104 146" fill="none" stroke="#D61C4E" stroke-width="22" stroke-linecap="round"/><text x="600" y="262" text-anchor="middle" fill="#EFEBE3" font-family="serif" font-size="46" font-style="italic">72%</text></svg></div>
-    <div class="info"><div class="no">02</div><span class="tag mono">Solo build · 2026</span><div class="tx"><span class="mono">Full-stack · Solo</span><h3>DailyDrive</h3><p>A task platform with dashboards, subtasks, recurring tasks, gamification and cron-driven reminders. Documented with a 21-page manual.</p></div><div class="mt"><div class="stack"><span>Node.js</span><span>Express</span><span>MySQL</span><span>Chart.js</span></div><div class="acts"><button class="more" onclick="openDoc('assets/dailydrive-manual.pdf','DailyDrive — User Manual','21 pages · User &amp; Admin guide')">User manual · 21 pp ↗</button></div></div></div>
+    <div class="swi"><span class="tag mono">Solo build · 2026</span><div class="tx"><span class="mono">Full-stack · Solo</span><h3>DailyDrive</h3><p>A task platform with dashboards, subtasks, recurring tasks, gamification and cron-driven reminders. Documented with a 21-page manual.</p></div><div class="mt"><div class="stack"><span>Node.js</span><span>Express</span><span>MySQL</span><span>Chart.js</span></div><div class="acts"><button class="more" onclick="openDoc('assets/dailydrive-manual.pdf','DailyDrive — User Manual','21 pages · User &amp; Admin guide')">User manual · 21 pp ↗</button></div></div></div>
     <div class="story" id="s2"><div><ul><li><b>Problem</b>Task apps were either too thin for real workloads or too heavy to stick with.</li><li><b>Approach</b>Wireframed both dashboards first, then built end-to-end using my own daily load as the test bed.</li><li><b>Outcome</b>Shipped and in daily use, with dark/light mode designed in from the start.</li></ul></div></div>
   </article>
 
-  <article class="case rv">
-    <div class="plate"><img src="assets/safepath-preview.jpg" alt="SafePath admin dashboard and mobile app" onerror="this.remove()">
+  <article class="swc rv" style="--c:var(--t)">
+    <div class="swp"><span class="swn">03</span><img src="assets/safepath-preview.jpg" alt="SafePath admin dashboard and mobile app" onerror="this.remove()">
       <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><rect width="800" height="500" fill="#D61C4E"/><g fill="none" stroke="#fff" stroke-opacity=".3"><circle cx="400" cy="250" r="200"/><circle cx="400" cy="250" r="150"/><circle cx="400" cy="250" r="100"/></g><path d="M400 130l90 30v70c0 60-40 100-90 120-50-20-90-60-90-120v-70z" fill="#0A0E1D"/><path d="M360 245l30 30 55-65" fill="none" stroke="#FEDB39" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="info"><div class="no">03</div><span class="tag mono">Application dev · 2024</span><div class="tx"><span class="mono">UI/UX · QA · Documentation</span><h3>SafePath</h3><p>A confidential bullying-report platform with AI text classification that flags concerning reports for staff review.</p></div><div class="mt"><div class="stack"><span>Express.js</span><span>TensorFlow</span><span>Bootstrap</span><span>MySQL</span></div><div class="acts"><button class="more" onclick="openLb(2)">View interface ↗</button><a class="more" href="https://github.com/oncepebrero/SafePath" target="_blank" rel="noopener">Repository ↗</a></div></div></div>
+    <div class="swi"><span class="tag mono">Application dev · 2024</span><div class="tx"><span class="mono">UI/UX · QA · Documentation</span><h3>SafePath</h3><p>A confidential bullying-report platform with AI text classification that flags concerning reports for staff review.</p></div><div class="mt"><div class="stack"><span>Express.js</span><span>TensorFlow</span><span>Bootstrap</span><span>MySQL</span></div><div class="acts"><button class="more" onclick="openLb(2)">View interface ↗</button><a class="more" href="https://github.com/oncepebrero/SafePath" target="_blank" rel="noopener">Repository ↗</a></div></div></div>
     <div class="story" id="s3"><div><ul><li><b>Problem</b>Students under-report bullying because they fear being identified.</li><li><b>Approach</b>A calm, neutral interface, since tone matters when the user already feels exposed.</li><li><b>Outcome</b>A shipped reporting flow that helps staff respond without exposing the student.</li></ul></div></div>
   </article></div>
 
@@ -1318,8 +1372,8 @@ $$('.rv').forEach(el=>io.observe(el));
 const pio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const p=e.target.querySelector('.plate');p&&p.classList.add('in');pio.unobserve(e.target)}}),{threshold:.12});
 $$('.case').forEach(c=>pio.observe(c));
 // stories live in the modal only
-const STORY=$$('.stk .case .story').map(e=>e.querySelector('ul').outerHTML);$$('.stk .case .story').forEach(e=>e.remove());STORY[3]='<ul><li><b>Problem</b>The team had a flowchart but nothing visual to review with stakeholders.</li><li><b>Approach</b>Built clickable prototypes from the flowchart and iterated with the dev team.</li><li><b>Outcome</b>A clean handoff: designs that were already checked for buildability.</li></ul>';
-$$('.stk .case .plate').forEach((p,i)=>{p.setAttribute('role','button');p.tabIndex=0;p.setAttribute('aria-label','Preview project '+(i+1));p.onclick=()=>openLb(i);p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i)}}});
+const STORY=$$('.swc .story').map(e=>e.querySelector('ul').outerHTML);$$('.swc .story').forEach(e=>e.remove());STORY[3]='<ul><li><b>Problem</b>The team had a flowchart but nothing visual to review with stakeholders.</li><li><b>Approach</b>Built clickable prototypes from the flowchart and iterated with the dev team.</li><li><b>Outcome</b>A clean handoff: designs that were already checked for buildability.</li></ul>';
+$$('.swc .swp').forEach((p,i)=>{p.setAttribute('role','button');p.tabIndex=0;p.setAttribute('aria-label','Preview project '+(i+1));p.onclick=()=>openLb(i);p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i)}}});
 // scroll: progress, nav, parallax, active link
 const secs=$$('#work,#about,#credentials,#capabilities,#contact'),links=$$('#links a');
 let tick=false;
@@ -1395,7 +1449,7 @@ const spy=['portfolio','expertise','credentials','services','about','contact'].m
 addEventListener('scroll',()=>{let c='';spy.forEach(e=>{const r=e.getBoundingClientRect();if(r.top<innerHeight*.4&&r.bottom>innerHeight*.4)c=e.id});$$('#links a,#mm a').forEach(a=>a.classList.toggle('on',a.dataset.go===c))},{passive:true});
 // ── project previews ──
 const W=(x)=>`<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">${x}</svg>`,R=(x,y,w,h,f,r=8,o=1)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${f}" fill-opacity="${o}"/>`;
-const plates=$$('.plate svg').map(v=>v.outerHTML);
+const plates=$$('.swp svg').map(v=>v.outerHTML);
 const ART=[plates[0],plates[1],plates[2],plates[3],
  W(R(0,0,800,500,'#10162B',0)+[...Array(28)].map((_,i)=>R(90+i%7*92,100+(i/7|0)*80,80,68,'#EFEBE3',8,.14)).join('')+R(182,180,80,68,'#D61C4E')+R(458,260,80,68,'#D61C4E')+R(90,40,300,34,'#1CD6CE')),
  W(R(0,0,800,500,'#0A0E1D',0)+[60,110,160,215].map(r=>`<circle cx="400" cy="250" r="${r}" fill="none" stroke="#FEDB39" stroke-opacity="${.9-r/300}"/>`).join('')+'<circle cx="400" cy="250" r="30" fill="#FEDB39"/>'+R(110,210,70,80,'#1CD6CE',10)+R(620,210,70,80,'#D61C4E',10)),
@@ -1449,6 +1503,10 @@ $('#cf').addEventListener('submit',async e=>{e.preventDefault();const f=e.target
  function run(){clearInterval(t);if(rm)return;t=setInterval(()=>set((i+1)%li.length),4200)}
  li.forEach((e,k)=>{e.addEventListener('click',()=>{set(k);run()});e.addEventListener('pointerenter',()=>{set(k);clearInterval(t)});e.addEventListener('pointerleave',run)});
  set(0);run()})();
+
+// fit name to column
+function fitName(){const n=document.querySelector('.hv-name');if(!n)return;const col=n.parentElement.clientWidth;if(!col)return;n.style.setProperty('--nfs','100px');const w=Math.max(...[...n.querySelectorAll('.ln>span')].map(x=>x.getBoundingClientRect().width));if(!w)return;const cap=innerWidth>900?innerHeight*.2:innerWidth*.2;n.style.setProperty('--nfs',Math.min(100*col/w*.99,cap)+'px')}
+fitName();addEventListener('resize',fitName);addEventListener('load',fitName);document.fonts&&document.fonts.ready.then(fitName);
 </script>
 </body>
 </html>
