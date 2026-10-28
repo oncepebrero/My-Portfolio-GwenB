@@ -1044,6 +1044,116 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .hs .name .ln:nth-child(2) span{font-style:italic;font-weight:500}
 @media(max-width:800px){.hs .name{font-size:clamp(3rem,16vw,5.2rem)}}
 @media(max-height:560px) and (orientation:landscape){.hs .name{font-size:clamp(2.4rem,8vw,4.2rem)}}
+
+/* ══ v30: modern client-focused hero + GALÁ feature ══ */
+header.hv.hero{height:auto;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(5.2rem,11vh,6.8rem) 0 0;overflow:hidden;position:relative}
+header.hv.hero>.w{display:flex;align-items:center;flex:1;padding-bottom:clamp(1.5rem,4vh,2.5rem);position:relative;z-index:1}
+.hv-bg{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(color-mix(in srgb,var(--tx) 14%,transparent) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse at 60% 35%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 60% 35%,#000,transparent 70%)}
+.hv-bg i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.3}
+.hv-bg .a{width:42vw;height:42vw;left:-10%;top:-12%;background:var(--navy)}
+.hv-bg .b{width:28vw;height:28vw;right:2%;top:6%;background:var(--d);opacity:.22}
+.hv-bg .c{width:22vw;height:22vw;right:30%;bottom:0;background:var(--b);opacity:.14}
+.hv-g{width:100%;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hv-l{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(1rem,2.4vh,1.6rem);min-width:0}
+.hv-badge{display:inline-flex;align-items:center;gap:.6rem;font:500 .74rem var(--mono);letter-spacing:.04em;color:var(--tx);border:1px solid var(--ln);background:color-mix(in srgb,var(--bg2) 70%,transparent);backdrop-filter:blur(8px);padding:.45rem .95rem;border-radius:99px}
+.hv-badge i,.hvlive i,.gx-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#35D07F;box-shadow:0 0 0 0 rgba(53,208,127,.6);animation:hvp 2s infinite}
+@keyframes hvp{70%{box-shadow:0 0 0 9px rgba(53,208,127,0)}100%{box-shadow:0 0 0 0 rgba(53,208,127,0)}}
+.hv-h{font-family:var(--sans);font-weight:700;font-size:clamp(3rem,min(8vw,15vh),7rem);line-height:.98;letter-spacing:-.045em;color:var(--tx);max-width:none}
+.hv-h em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em;background:linear-gradient(100deg,var(--d),#FF7A59 55%,var(--t));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-right:.08em}
+.hv-sub{font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.55;max-width:34ch;color:var(--tx2)}
+.hv-sub b{color:var(--tx);font-weight:600}
+.hv-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1rem}
+.hv-link{font:500 .78rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--tx2);border-bottom:1px solid var(--ln);padding-bottom:.15rem;transition:.3s}
+.hv-link:hover{color:var(--tx);border-color:var(--tx)}
+.hv-cta .btn.f{padding:1.05rem 1.9rem;box-shadow:0 14px 34px -12px var(--d)}
+.hv-roles{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
+.hv-roles li{position:relative;overflow:hidden;border:1px solid var(--ln);border-radius:99px;transition:border-color .3s,background .3s}
+.hv-roles button{display:flex;gap:.55rem;align-items:center;padding:.5rem 1rem;font:600 .86rem var(--sans);color:var(--tx2);letter-spacing:-.01em}
+.hv-roles .mono{color:var(--c)}
+.hv-roles li.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,transparent)}
+.hv-roles li.on button{color:var(--tx)}
+.hv-roles li i{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--c)}
+.hv-roles li.on i{animation:fill 4.2s linear forwards}
+.hvp{position:relative;justify-self:end;width:min(100%,430px);margin:0}
+.hvp .fr{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--bg2);box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:1px solid var(--ln);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .3s}
+.hvp .fr img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hvp .ph{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(160deg,var(--navy),var(--bg2))}
+.hvp .ph svg{width:46%;opacity:.5}
+.hvp::before{content:'';position:absolute;inset:8% -6% -6% 8%;border-radius:32px;background:linear-gradient(140deg,var(--d),var(--b) 60%,var(--t));opacity:.35;filter:blur(2px);z-index:-1}
+.hvc{position:absolute;display:flex;align-items:center;gap:.7rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border:1px solid var(--ln);border-radius:16px;padding:.6rem .95rem .6rem .6rem;font:500 .72rem/1.3 var(--sans);color:var(--tx2);box-shadow:0 18px 40px -18px rgba(0,0,0,.5);animation:fl 5s ease-in-out infinite;z-index:3}
+.hvc b{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--c);color:#0A0E1D;font:700 .8rem var(--mono)}
+.hvc em{display:block;font:600 .88rem var(--sans);font-style:normal;color:var(--tx)}
+.hvc.c1{left:-9%;top:10%}.hvc.c2{right:-7%;top:42%;animation-delay:-1.6s}.hvc.c3{left:-6%;bottom:14%;animation-delay:-3.2s}
+.hvlive{position:absolute;right:6%;bottom:-1.1rem;display:inline-flex;align-items:center;gap:.6rem;background:var(--tx);color:var(--bg);font:600 .78rem var(--sans);padding:.65rem 1.1rem;border-radius:99px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);z-index:4;transition:transform .3s var(--ease)}
+.hvlive:hover{transform:translateY(-3px)}
+.hv-why{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:clamp(2.2rem,6vh,3.5rem);border:1px solid var(--ln);border-radius:20px;overflow:hidden;background:var(--ln)}
+.hv-why li{background:color-mix(in srgb,var(--bg) 92%,var(--tx));padding:1.1rem 1.4rem;display:grid;gap:.25rem}
+.hv-why b{font:600 1rem var(--sans);color:var(--tx);letter-spacing:-.01em}
+.hv-why span{font-size:.86rem;line-height:1.5;color:var(--tx2)}
+.hv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.4rem;padding:0 .4rem}
+.hv-stats dt{font:400 clamp(1.5rem,2.6vw,2.2rem)/1 var(--serif);color:var(--tx)}
+.hv-stats dd{font:500 .66rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);margin-top:.3rem}
+@media(max-width:900px){
+ .hv-g{grid-template-columns:1fr;gap:2.6rem}
+ .hvp{justify-self:center;width:min(78%,340px)}
+ .hvc.c1{left:-8%}.hvc.c2{right:-8%}.hvc.c3{display:none}
+ .hv-why{grid-template-columns:1fr}
+ .hv-stats{grid-template-columns:repeat(2,1fr)}
+ .hv-h{max-width:none}
+}
+@media(max-width:480px){.hvc{display:none}.hv-cta .btn{width:100%;justify-content:center}.hv-cta .hv-link{margin:0 auto}}
+@media(prefers-reduced-motion:reduce){.hvc,.hv-badge i,.hvlive i,.gx-dot{animation:none}}
+
+/* GALÁ featured live project */
+.gx{margin-bottom:clamp(2rem,5vw,3.5rem);border:1px solid var(--ln);border-radius:26px;padding:clamp(1rem,2.4vw,1.8rem);background:linear-gradient(160deg,color-mix(in srgb,var(--bg2) 85%,transparent),var(--bg));position:relative;overflow:hidden}
+.gx::before{content:'';position:absolute;width:50%;aspect-ratio:1;right:-10%;top:-30%;border-radius:50%;background:var(--b);opacity:.14;filter:blur(90px);pointer-events:none}
+.gx-t{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem;position:relative}
+.gx-t .mono{display:inline-flex;align-items:center;gap:.6rem;color:var(--tx2)}
+.gx-url{color:var(--tx);border-bottom:1px solid var(--ln)}
+.gx-b{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(1.4rem,3.5vw,3rem);align-items:center;position:relative}
+.gx-shot{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--ln);box-shadow:0 36px 70px -34px rgba(0,0,0,.65);transition:transform .6s var(--ease)}
+.gx-shot:hover{transform:translateY(-6px) scale(1.01)}
+.gx-bar{display:flex;align-items:center;gap:.4rem;padding:.6rem .8rem;background:var(--bg2);border-bottom:1px solid var(--ln)}
+.gx-bar i{width:9px;height:9px;border-radius:50%;background:var(--tx3);opacity:.5}
+.gx-bar span{margin-left:.6rem;font:500 .68rem var(--mono);color:var(--tx3);background:var(--bg);padding:.2rem .8rem;border-radius:99px;flex:0 1 auto}
+.gx-shot img{display:block;width:100%;height:auto}
+.gx-i h3{font-size:clamp(2.2rem,4.4vw,3.6rem);margin:.5rem 0 .8rem;letter-spacing:-.03em}
+.gx-i h3 em{color:var(--tx2);font-size:.55em;white-space:nowrap}
+.gx-i p{color:var(--tx2);max-width:48ch}
+.gx-f{list-style:none;display:flex;gap:1.6rem;margin:1.2rem 0 .2rem}
+.gx-f li{font:500 .66rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--tx3)}
+.gx-f b{display:block;font:400 2rem/1 var(--serif);color:var(--tx);letter-spacing:0;margin-bottom:.2rem}
+.gx .acts{margin-top:.6rem}
+@media(max-width:900px){.gx-b{grid-template-columns:1fr}}
+
+/* ══ v31: bold hero, compact photo ══ */
+.hv-g{grid-template-columns:minmax(0,1fr) auto;gap:clamp(2rem,6vw,5rem)}
+.hv-l{gap:clamp(1.2rem,3vh,2rem)}
+.hv-name{font-family:var(--sans);font-weight:800;text-transform:uppercase;font-size:clamp(2.6rem,min(5.6vw,11vh),5.2rem);line-height:.9;letter-spacing:-.055em;color:var(--tx);max-width:none}
+.hv-name .ln{display:block;overflow:hidden;padding:0 .08em .06em 0}
+.hv-name .ln>span{display:inline-block;animation:hvup 1s var(--ease) both}
+.hv-name .ln.out>span{animation-delay:.12s;-webkit-text-stroke:2px var(--tx);-webkit-text-fill-color:transparent;transition:-webkit-text-fill-color .5s}
+.hv-name .ln.out:hover>span{-webkit-text-fill-color:var(--d);-webkit-text-stroke-color:var(--d)}
+@keyframes hvup{from{transform:translateY(105%)}to{transform:none}}
+.hv-roles li{border-radius:12px}
+.hv-roles button{font-size:.95rem;padding:.65rem 1.1rem}
+.hv-cta{margin-top:.4rem}
+.hvp{width:auto;justify-self:center;position:relative;height:clamp(240px,min(52vh,60vw),430px);aspect-ratio:3/4;margin:0}
+.hvp::before{display:none}
+.hvp .fr{position:relative;z-index:2;width:100%;height:100%;aspect-ratio:auto;border-radius:999px 999px 22px 22px;border:3px solid var(--tx);box-shadow:none}
+.hv-sh{position:absolute;z-index:1;pointer-events:none}
+.hv-sh.s1{width:52%;aspect-ratio:1;border-radius:50%;background:var(--t);right:-16%;top:-6%;animation:fl 6s ease-in-out infinite}
+.hv-sh.s2{width:38%;aspect-ratio:1;background:var(--b);left:-14%;bottom:8%;border-radius:22%;transform:rotate(14deg);animation:fl 7s ease-in-out infinite -2s}
+.hv-sh.s3{width:30%;aspect-ratio:1;border:3px dashed var(--d);border-radius:50%;right:-10%;bottom:-6%}
+.hv-ring{position:absolute;z-index:3;width:clamp(96px,9vw,128px);left:-12%;top:2%;animation:hvspin 18s linear infinite;background:var(--bg);border-radius:50%;border:1px solid var(--ln)}
+.hv-ring text{font:600 13px var(--mono);fill:var(--tx)}
+@keyframes hvspin{to{transform:rotate(360deg)}}
+@media(max-width:900px){.hv-g{grid-template-columns:1fr;gap:2.4rem}.hvp{height:clamp(220px,34vh,320px)}.hv-name{font-size:clamp(2.2rem,10.6vw,4.6rem)}}
+@media(max-width:480px){.hv-cta .btn{width:100%;justify-content:center}.hv-cta .hv-link{margin:0 auto}}
+@media(prefers-reduced-motion:reduce){.hv-sh,.hv-ring,.hv-name .ln>span{animation:none}}
+.wk.s7{grid-column:span 4}
+@media(max-width:900px){.wk.s7{grid-column:span 2}}
+@media(max-width:520px){.wk.s7{grid-column:span 1}}
 </style>
 </head>
 <body>
@@ -1057,15 +1167,23 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="nr"><button class="ic" id="theme" aria-label="Toggle light and dark theme">◐</button><button class="ic mb" id="mb" aria-label="Open menu" aria-expanded="false">☰</button><a href="#contact" class="btn" data-mag style="padding:.55rem 1rem">Hire me</a></div>
 </div></nav>
 
-<div class="pg on" id="home"><header class="hero" id="top">
-  <div class="bp" aria-hidden="true"></div><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i>
-  <div class="w"><div class="hs">
-    <div class="hs-l">
-      <h1 class="name" aria-label="Gwen Basconcillo"><span class="ln"><span>Gwen</span></span><span class="ln"><span>Basconcillo</span></span></h1>
-      <ol class="hs-roles"><li style="--c:var(--d)"><button type="button"><span class="mono">01</span>UI/UX Designer</button><i></i></li><li style="--c:var(--b)"><button type="button"><span class="mono">02</span>Front-End &amp; Web Developer</button><i></i></li><li style="--c:var(--t)"><button type="button"><span class="mono">03</span>QA Tester and Documentation</button><i></i></li></ol>
-      <div class="row"><a href="#portfolio" class="btn f" data-mag>See my work →</a><a href="assets/Basconcillo_Resume.pdf" target="_blank" rel="noopener" class="btn" data-mag>Résumé ↓</a><a href="#contact" class="btn" data-mag>Let’s talk</a></div>
+<div class="pg on" id="home"><header class="hero hv" id="top">
+  <div class="hv-bg" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+  <div class="w"><div class="hv-g">
+    <div class="hv-l">
+      <h1 class="hv-name" aria-label="Gwen Basconcillo"><span class="ln"><span>Gwen</span></span><span class="ln out"><span>Basconcillo</span></span></h1>
+      <ol class="hv-roles" aria-label="What I do">
+        <li style="--c:var(--d)"><button type="button"><span class="mono">01</span>UI/UX Designer</button><i></i></li>
+        <li style="--c:var(--b)"><button type="button"><span class="mono">02</span>Front-End & Web Developer</button><i></i></li>
+        <li style="--c:var(--t)"><button type="button"><span class="mono">03</span>QA Tester</button><i></i></li>
+      </ol>
+      <div class="hv-cta"><a href="#contact" class="btn f" data-mag>Start your project →</a><a href="#portfolio" class="btn" data-mag>See my work</a><a href="assets/Basconcillo_Resume.pdf" target="_blank" rel="noopener" class="hv-link">Résumé ↓</a></div>
     </div>
-    <figure class="photo" id="photo" data-s="0"><div class="fr"><img id="meImg" alt="Gwen Basconcillo" hidden><div class="ph" id="mePh"><svg viewBox="0 0 100 100" fill="currentColor" style="color:var(--tx)"><circle cx="50" cy="34" r="17"/><path d="M14 92c2-24 16-36 36-36s34 12 36 36z"/></svg><span class="mono">Your photo</span></div></div><div class="o o-d"><span class="st" style="--c:var(--d)">Design</span><i class="dz"><em>Avatar · 1:1</em></i><div class="sw"><b style="background:#D61C4E"></b><b style="background:#1CD6CE"></b><b style="background:#FEDB39"></b><b style="background:#293462"></b><span>Palette</span></div></div><div class="o o-b"><span class="st" style="--c:var(--b)">Build</span><div class="code"><span class="k">&lt;Profile</span><br>&nbsp;&nbsp;<span class="a">role</span>=<span class="v">"Front-End"</span><br>&nbsp;&nbsp;<span class="a">responsive</span> <span class="k">/&gt;</span></div></div><div class="o o-t"><span class="st" style="--c:var(--t)">Test</span><ul class="chk"><li>Layout</li><li>Responsive</li><li>Edge cases</li><li>Documented</li></ul></div></figure>
+    <figure class="hvp" id="photo" data-s="0">
+      <span class="hv-sh s1" aria-hidden="true"></span><span class="hv-sh s2" aria-hidden="true"></span><span class="hv-sh s3" aria-hidden="true"></span>
+      <div class="fr"><img id="meImg" alt="Gwen Basconcillo" hidden><div class="ph" id="mePh"><svg viewBox="0 0 100 100" fill="currentColor" style="color:var(--tx)"><circle cx="50" cy="34" r="17"/><path d="M14 92c2-24 16-36 36-36s34 12 36 36z"/></svg></div></div>
+      <svg class="hv-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs><text><textPath href="#rp" textLength="496" lengthAdjust="spacing">DESIGN ✦ BUILD ✦ TEST ✦ DESIGN ✦ BUILD ✦ TEST ✦ </textPath></text></svg>
+    </figure>
   </div></div>
   <div class="tick" aria-hidden="true"><div id="mq"></div></div>
 </header></div>
@@ -1073,6 +1191,23 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <main>
 <section class="pg" id="portfolio"><div class="w">
   <div class="sh rv"><div><span class="mono">01 — Selected work</span><h2>Things I’ve <em>designed,</em><br>built &amp; broken on purpose.</h2></div><button class="btn" data-open data-mag>View all works ↗</button></div>
+
+  <article class="gx rv" id="gala">
+    <div class="gx-b">
+      <a class="gx-shot" href="https://gala.freedev.app/" target="_blank" rel="noopener" aria-label="Open the live GALÁ website">
+        <div class="gx-bar"><i></i><i></i><i></i><span>gala.freedev.app</span></div>
+        <img src="assets/gala-preview.jpg" alt="GALÁ tourism website for Puerto Galera, Oriental Mindoro: hero with beach view and search" loading="lazy">
+      </a>
+      <div class="gx-i">
+        <span class="mono">Tourism · Web platform</span>
+        <h3>GALÁ <em>— Explore. Enjoy.</em></h3>
+        <p>A live travel-discovery site for Puerto Galera, Oriental Mindoro. Visitors search or browse 60 places across beaches, dive sites, waterfalls and heritage spots, with an interactive map, events, a travel guide, responsible-travel tips, a feedback form and an “Ask Gali” assistant.</p>
+        <ul class="gx-f"><li><b>60</b>places</li><li><b>12</b>beaches</li><li><b>23</b>dive sites</li></ul>
+        <div class="stack"><span>Search</span><span>Interactive map</span><span>Travel guide</span><span>AI assistant</span></div>
+        <div class="acts"><a class="btn f" href="https://gala.freedev.app/" target="_blank" rel="noopener" data-mag>Visit live site ↗</a></div>
+      </div>
+    </div>
+  </article>
 
   <div class="stk"><article class="case rv">
     <div class="plate"><img src="assets/rms-preview.jpg" alt="RM Distribution wholesale website" onerror="this.remove()">
@@ -1143,7 +1278,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <div class="xm" id="dm" role="dialog" aria-modal="true" aria-label="Document"><div class="xh"><div><h3 id="dmt"></h3><span class="mono" id="dmm"></span></div><div class="xt"><a class="ic" id="dmo" href="#" target="_blank" rel="noopener">Open in tab</a><a class="ic" id="dmd" href="#" download>Download</a><button class="ic" onclick="closeDoc()" aria-label="Close">✕</button></div></div><div class="xb"><iframe id="dmf" title="Document preview"></iframe></div></div>
 <div class="xm" id="mv" role="dialog" aria-modal="true" aria-label="Mockup viewer"><div class="xh"><div><h3 id="mvt"></h3><span class="mono" id="mvm"></span></div><div class="xt"><button class="ic" onclick="mvSet(mvW/1.2)" aria-label="Zoom out">−</button><button class="ic" onclick="mvSet(mvW*1.2)" aria-label="Zoom in">+</button><button class="ic" onclick="mvSet(mvFit())">Fit</button><button class="ic" onclick="mvSet(mvN)">1:1</button><button class="ic" onclick="closeMockup()" aria-label="Close">✕</button></div></div><div class="xb" id="mvb"><img id="mvi" alt=""></div></div>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="ic" id="lbx" aria-label="Close preview" style="position:absolute;top:1rem;right:1.2rem">✕</button><div class="lbi" id="lbi"></div></div>
-<div class="md" id="md" role="dialog" aria-modal="true" aria-label="All works"><button class="ic mx" id="mx" aria-label="Close">✕</button><div class="w"><span class="mono">The full archive</span><h2 style="margin-top:.6rem">Every project, <em>no edits.</em></h2><div class="tabs"><button class="on" data-tab="p">Projects · 7</button><button data-tab="c">Website concepts · 6</button><button data-tab="l">Logo designs · 5</button></div><ul class="wl" id="wl"></ul><div class="concepts" id="cn" hidden></div><div class="lgg" id="lg" hidden></div></div></div>
+<div class="md" id="md" role="dialog" aria-modal="true" aria-label="All works"><button class="ic mx" id="mx" aria-label="Close">✕</button><div class="w"><span class="mono">The full archive</span><h2 style="margin-top:.6rem">Every project, <em>no edits.</em></h2><div class="tabs"><button class="on" data-tab="p">Projects · 8</button><button data-tab="c">Website concepts · 6</button><button data-tab="l">Logo designs · 5</button></div><ul class="wl" id="wl"></ul><div class="concepts" id="cn" hidden></div><div class="lgg" id="lg" hidden></div></div></div>
 <footer><div class="w mono"><span>© <span id="yr"></span> Gwen M. Basconcillo</span><a href="#top">Back to top ↑</a></div></footer>
 
 <script>
@@ -1163,8 +1298,8 @@ $$('.rv').forEach(el=>io.observe(el));
 const pio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const p=e.target.querySelector('.plate');p&&p.classList.add('in');pio.unobserve(e.target)}}),{threshold:.12});
 $$('.case').forEach(c=>pio.observe(c));
 // stories live in the modal only
-const STORY=$$('.case .story').map(e=>e.querySelector('ul').outerHTML);$$('.case .story').forEach(e=>e.remove());STORY[3]='<ul><li><b>Problem</b>The team had a flowchart but nothing visual to review with stakeholders.</li><li><b>Approach</b>Built clickable prototypes from the flowchart and iterated with the dev team.</li><li><b>Outcome</b>A clean handoff: designs that were already checked for buildability.</li></ul>';
-$$('.case .plate').forEach((p,i)=>{p.setAttribute('role','button');p.tabIndex=0;p.setAttribute('aria-label','Preview project '+(i+1));p.onclick=()=>openLb(i);p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i)}}});
+const STORY=$$('.stk .case .story').map(e=>e.querySelector('ul').outerHTML);$$('.stk .case .story').forEach(e=>e.remove());STORY[3]='<ul><li><b>Problem</b>The team had a flowchart but nothing visual to review with stakeholders.</li><li><b>Approach</b>Built clickable prototypes from the flowchart and iterated with the dev team.</li><li><b>Outcome</b>A clean handoff: designs that were already checked for buildability.</li></ul>';
+$$('.stk .case .plate').forEach((p,i)=>{p.setAttribute('role','button');p.tabIndex=0;p.setAttribute('aria-label','Preview project '+(i+1));p.onclick=()=>openLb(i);p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i)}}});
 // scroll: progress, nav, parallax, active link
 const secs=$$('#work,#about,#credentials,#capabilities,#contact'),links=$$('#links a');
 let tick=false;
@@ -1250,7 +1385,7 @@ const ART=[plates[0],plates[1],plates[2],plates[3],
  W(R(0,0,800,500,'#293462',0)+R(170,90,460,320,'#D61C4E',14,.75)+'<rect x="170" y="90" width="460" height="320" rx="14" fill="none" stroke="#1CD6CE" stroke-width="5" stroke-dasharray="14 10"/>'+R(170,50,190,40,'#1CD6CE',6)+'<text x="190" y="78" font-family="monospace" font-size="22" fill="#0A0E1D">FRESH 94%</text><circle cx="400" cy="250" r="80" fill="#FEDB39" fill-opacity=".55"/>'),
  W(R(0,0,800,500,'#0A0E1D',0)+[...Array(12)].map((_,i)=>R(110+i%4*140,80+(i/4|0)*120,126,106,['#D61C4E','#1CD6CE','#FEDB39','#293462'][(i*5)%4],10,i===6?0:.9)).join(''))];
 const lb=$('#lb');
-function openLb(i){const p=P[i],d=DOC[i];$('#lbi').innerHTML=`<div class="lbg"><div class="big2 pvb">${ART[i]}${imgTag(i)}</div><div class="lbt"><h3>${p[0]}</h3><p class="mono" style="margin-bottom:.8rem">${p[2]} · ${p[1]} · ${p[5]}</p><p style="max-width:60ch">${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div>${STORY[i]?`<div class="lbstory">${STORY[i]}</div>`:''}<div class="acts">${d?`<button class="more" onclick="openDoc('${d[0]}','${d[1]}','${d[2]}')">Open PDF ↗</button>`:''}${i===2?'<a class="more" href="https://github.com/oncepebrero/SafePath" target="_blank" rel="noopener">Repository ↗</a>':''}</div></div></div>`;lb.classList.add('open');setTimeout(()=>$('#lbx').focus(),50)}
+function openLb(i){const p=P[i],d=DOC[i];$('#lbi').innerHTML=`<div class="lbg"><div class="big2 pvb">${ART[i]}${imgTag(i)}</div><div class="lbt"><h3>${p[0]}</h3><p class="mono" style="margin-bottom:.8rem">${p[2]} · ${p[1]} · ${p[5]}</p><p style="max-width:60ch">${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div>${STORY[i]?`<div class="lbstory">${STORY[i]}</div>`:''}<div class="acts">${d?`<button class="more" onclick="openDoc('${d[0]}','${d[1]}','${d[2]}')">Open PDF ↗</button>`:''}${i===7?'<a class="more" href="https://gala.freedev.app/" target="_blank" rel="noopener">Visit live site ↗</a>':''}${i===2?'<a class="more" href="https://github.com/oncepebrero/SafePath" target="_blank" rel="noopener">Repository ↗</a>':''}</div></div></div>`;lb.classList.add('open');setTimeout(()=>$('#lbx').focus(),50)}
 function openLbImg(src,cap){$('#lbi').innerHTML=`<div class="big2"><img src="${src}" alt="${cap}" style="width:100%;height:100%;object-fit:contain;background:var(--bg2)"></div><h3>${cap}</h3>`;lb.classList.add('open');setTimeout(()=>$('#lbx').focus(),50)}
 function closeLb(){lb.classList.remove('open')}
 $('#lbx').onclick=closeLb;lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
@@ -1259,6 +1394,7 @@ const IMGS=['assets/rms-preview.jpg','assets/dailydrive-preview.png','assets/saf
 const DOC={0:['assets/rms-capstone.pdf','RM’S — Capstone Project','186 pages · Full capstone documentation'],1:['assets/dailydrive-manual.pdf','DailyDrive — User Manual','21 pages · User & Admin guide']};
 const imgTag=i=>`<img class="pi" src="${IMGS[i]}" alt="${P[i][0]}" loading="lazy" onerror="this.remove()">`;
 const COL=['--d','--b','--t'];
+P.push(['GALÁ — Explore. Enjoy.','2026','Live website','Tourism discovery site for Puerto Galera with 60 places, an interactive map, events, a travel guide and an “Ask Gali” assistant.','Search · Interactive map · Travel guide · AI assistant','Live']);ART[7]=W(R(0,0,800,500,'#0E6F8C',0));IMGS[7]='assets/gala-preview.jpg';
 $('#wl').innerHTML=P.map((p,i)=>`<li class="wk s${i}" style="--i:${i};--c:var(${COL[i%3]})"><button class="wk-in" onclick="openLb(${i})" aria-label="Open ${p[0]}"><div class="wk-art">${ART[i]}${imgTag(i)}</div><div class="wk-top"><span class="wk-n">${String(i+1).padStart(2,'0')}</span><span class="st mono">${p[5]}</span></div><div class="wk-b"><h3>${p[0]}</h3><p class="mono">${p[2]} · ${p[1]}</p><div class="wk-x"><div><p>${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div></div></div></div></button></li>`).join('');
 
 // ── living name ──
@@ -1288,7 +1424,7 @@ $('#cf').addEventListener('submit',async e=>{e.preventDefault();const f=e.target
  b.disabled=false;b.textContent='Send message →'});
 
 // hero stage: Design → Build → Test
-(function(){const ph=$('#photo'),li=$$('.hs-roles li');if(!ph||!li.length)return;let i=0,t;
+(function(){const ph=$('#photo'),li=$$('.hv-roles li');if(!ph||!li.length)return;let i=0,t;
  function set(n){i=n;ph.dataset.s=n;li.forEach((e,k)=>e.classList.toggle('on',k===n))}
  function run(){clearInterval(t);if(rm)return;t=setInterval(()=>set((i+1)%li.length),4200)}
  li.forEach((e,k)=>{e.addEventListener('click',()=>{set(k);run()});e.addEventListener('pointerenter',()=>{set(k);clearInterval(t)});e.addEventListener('pointerleave',run)});
