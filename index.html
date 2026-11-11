@@ -1522,6 +1522,11 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
 /* magnetic arrow */
 .bt-ar{transition:transform .6s var(--ease),background .3s,color .3s,border-color .3s,translate .25s ease-out}
 @media(prefers-reduced-motion:reduce){.bt:hover .bt-c.in:not(:hover){scale:1}}
+/* lightbox: show the whole screenshot, never cropped */
+.lbi .big2.pvb{aspect-ratio:auto;display:grid;background:#0A0E1D}
+.lbi .big2.pvb:has(.pi) svg{display:none}
+.lbi .big2.pvb .pi{position:static;grid-area:1/1;width:100%;height:auto;max-height:min(78vh,900px);object-fit:contain;object-position:center;transform:none;background:#0A0E1D}
+.lbi .big2.pvb svg{grid-area:1/1}
 </style>
 
 
