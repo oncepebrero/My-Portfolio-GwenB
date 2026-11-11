@@ -1527,6 +1527,16 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
 .lbi .big2.pvb:has(.pi) svg{display:none}
 .lbi .big2.pvb .pi{position:static;grid-area:1/1;width:100%;height:auto;max-height:min(78vh,900px);object-fit:contain;object-position:center;transform:none;background:#0A0E1D}
 .lbi .big2.pvb svg{grid-area:1/1}
+/* v43: no B&W, 7 projects */
+.bt-px img,.bt-px svg{filter:none}
+@media(hover:hover){.bt:hover .bt-c.in:not(:hover):not(:focus-visible){filter:brightness(.7)}}
+@media(min-width:901px){.bt-c.s5,.bt-c.s6{grid-column:span 3}}
+/* v44: archive grid — layout by position so no gaps after removing a project */
+.wl{grid-auto-flow:dense}
+.wk.s4,.wk.s5{grid-column:span 1;grid-row:span 1}
+.wk.s6{grid-column:span 2}
+.wk.s7{grid-column:auto}
+@media(max-width:520px){.wk.s6{grid-column:span 1}}
 </style>
 
 
@@ -1638,7 +1648,7 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
 <div class="xm" id="dm" role="dialog" aria-modal="true" aria-label="Document"><div class="xh"><div><h3 id="dmt"></h3><span class="mono" id="dmm"></span></div><div class="xt"><a class="ic" id="dmo" href="#" target="_blank" rel="noopener">Open in tab</a><a class="ic" id="dmd" href="#" download>Download</a><button class="ic" onclick="closeDoc()" aria-label="Close">✕</button></div></div><div class="xb"><iframe id="dmf" title="Document preview"></iframe></div></div>
 <div class="xm" id="mv" role="dialog" aria-modal="true" aria-label="Mockup viewer"><div class="xh"><div><h3 id="mvt"></h3><span class="mono" id="mvm"></span></div><div class="xt"><button class="ic" onclick="mvSet(mvW/1.2)" aria-label="Zoom out">−</button><button class="ic" onclick="mvSet(mvW*1.2)" aria-label="Zoom in">+</button><button class="ic" onclick="mvSet(mvFit())">Fit</button><button class="ic" onclick="mvSet(mvN)">1:1</button><button class="ic" onclick="closeMockup()" aria-label="Close">✕</button></div></div><div class="xb" id="mvb"><img id="mvi" alt=""></div></div>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="ic" id="lbx" aria-label="Close preview" style="position:absolute;top:1rem;right:1.2rem">✕</button><div class="lbi" id="lbi"></div></div>
-<div class="md" id="md" role="dialog" aria-modal="true" aria-label="All works"><button class="ic mx" id="mx" aria-label="Close">✕</button><div class="w"><span class="mono">The full archive</span><h2 style="margin-top:.6rem">Every project, <em>no edits.</em></h2><div class="tabs"><button class="on" data-tab="p">Projects · 8</button><button data-tab="c">Website concepts · 6</button><button data-tab="l">Logo designs · 5</button></div><ul class="wl" id="wl"></ul><div class="concepts" id="cn" hidden></div><div class="lgg" id="lg" hidden></div></div></div>
+<div class="md" id="md" role="dialog" aria-modal="true" aria-label="All works"><button class="ic mx" id="mx" aria-label="Close">✕</button><div class="w"><span class="mono">The full archive</span><h2 style="margin-top:.6rem">Every project, <em>no edits.</em></h2><div class="tabs"><button class="on" data-tab="p">Projects · 7</button><button data-tab="c">Website concepts · 6</button><button data-tab="l">Logo designs · 5</button></div><ul class="wl" id="wl"></ul><div class="concepts" id="cn" hidden></div><div class="lgg" id="lg" hidden></div></div></div>
 <footer><div class="w mono"><span>© <span id="yr"></span> Gwen M. Basconcillo</span><a href="#top">Back to top ↑</a></div></footer>
 
 <script>
@@ -1754,7 +1764,7 @@ const DOC={0:['assets/rms-capstone.pdf','RM’S — Capstone Project','186 pages
 const imgTag=i=>`<img class="pi" src="${IMGS[i]}" alt="${P[i][0]}" loading="lazy" onerror="this.remove()">`;
 const COL=['--d','--b','--t'];
 P.push(['GALÁ — Explore. Enjoy.','2026','Live website','Tourism discovery site for Puerto Galera with 60 places, an interactive map, events, a travel guide and an “Ask Gali” assistant.','PHP · MySQL · JavaScript · Staff dashboard','Live']);ART[7]=W(R(0,0,800,500,'#0E6F8C',0));IMGS[7]='assets/gala-preview.jpg';
-$('#wl').innerHTML=P.map((p,i)=>`<li class="wk s${i}" style="--i:${i};--c:var(${COL[i%3]})"><button class="wk-in" onclick="openLb(${i})" aria-label="Open ${p[0]}"><div class="wk-art">${ART[i]}${imgTag(i)}</div><div class="wk-top"><span class="wk-n">${String(i+1).padStart(2,'0')}</span><span class="st mono">${p[5]}</span></div><div class="wk-b"><h3>${p[0]}</h3><p class="mono">${p[2]} · ${p[1]}</p><div class="wk-x"><div><p>${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div></div></div></div></button></li>`).join('');
+$('#wl').innerHTML=P.map((p,i)=>[p,i]).filter(x=>x[1]!==6).map(([p,i],j)=>`<li class="wk s${j}" style="--i:${i};--c:var(${COL[i%3]})"><button class="wk-in" onclick="openLb(${i})" aria-label="Open ${p[0]}"><div class="wk-art">${ART[i]}${imgTag(i)}</div><div class="wk-top"><span class="wk-n">${String(i+1).padStart(2,'0')}</span><span class="st mono">${p[5]}</span></div><div class="wk-b"><h3>${p[0]}</h3><p class="mono">${p[2]} · ${p[1]}</p><div class="wk-x"><div><p>${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div></div></div></div></button></li>`).join('');
 
 // ── document + mockup viewers ──
 function openDoc(src,t,m){$('#dmt').textContent=t;$('#dmm').textContent=m||'';$('#dmf').src=src+'#toolbar=1&navpanes=0&view=FitH';$('#dmo').href=src;$('#dmd').href=src;$('#dm').classList.add('open');document.body.style.overflow='hidden'}
@@ -1791,7 +1801,7 @@ s.addEventListener('scroll',u,{passive:true});addEventListener('resize',u);addEv
 
 // ── v41 works: bento + filters + scroll effects ──
 (function(){const G=$('#bt');if(!G||typeof P==='undefined')return;
- const order=[7,0,1,2,3,4,5,6],C=['--d','--b','--t'],N=order.length,pad=n=>String(n).padStart(2,'0'),short=t=>t.split(' — ')[0];
+ const order=[7,0,1,2,3,4,5],C=['--d','--b','--t'],N=order.length,pad=n=>String(n).padStart(2,'0'),short=t=>t.split(' — ')[0];
  const chips=i=>P[i][4].split(' · ').map(x=>`<span>${x}</span>`).join('');
  const grp=i=>P[i][5]==='Live'?'Live':P[i][5]==='Shipped'?'Shipped':'more';
  const split=t=>{let n=0;return t.split(' ').map(w=>`<span class="w">${[...w].map(c=>`<span class="ch" style="--i:${n++}">${c}</span>`).join('')}</span>`).join(' ')};
