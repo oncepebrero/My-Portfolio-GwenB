@@ -1603,6 +1603,10 @@ img,svg,video,canvas{max-width:100%}
  .wk-in{position:relative;inset:auto;min-height:inherit;height:100%;gap:1.2rem}
 }
 @media(max-width:520px){.wk{min-height:340px}.wk-top .st{font-size:.62rem}}
+/* v53: selected work screenshots are never cropped — window takes the image's own shape */
+.pk-s{background:#0A0E1D}
+.pk-s img{object-fit:contain;object-position:center}
+.pk-s:has(img) svg{display:none}
 </style>
 
 
@@ -1885,7 +1889,7 @@ s.addEventListener('scroll',u,{passive:true});addEventListener('resize',u);addEv
  // [project index, layout, bg, text, accent]   (MinSU stays in the archive only)
  const SPEC=[[7,'h w4','#0F7A8A','#FFFFFF','#FFD64A'],[1,'w2','#FFD64A','#1B1B1B','#B89B2E'],[0,'w2','#F2ECE4','#2B2B2B','#C9A27A'],[2,'w2','#FF8FAB','#2A0A14','#FFC2D1'],[3,'w2','#DCE6D2','#1F3320','#A9C29A']];
  const total=P.filter((p,i)=>i!==5&&i!==6).length;
- const win=i=>`<div class="pk-w"><div class="pk-s">${ART[i]||''}<img src="${IMGS[i]}" alt="${P[i][0]} preview" loading="lazy" draggable="false" onerror="this.remove()"></div></div>`;
+ const win=i=>`<div class="pk-w"><div class="pk-s">${ART[i]||''}<img src="${IMGS[i]}" alt="${P[i][0]} preview" draggable="false" onload="const r=this.naturalWidth/this.naturalHeight;if(r)this.parentNode.style.aspectRatio=Math.min(2.4,Math.max(1.15,r))" onerror="this.remove()"></div></div>`;
  const top=(k,live)=>`<div class="pk-t"><div><span class="pk-n">${pad(k+1)}</span>${live?'<span class="pk-live"><i></i>Live</span>':''}</div><i class="pk-ar">↗</i></div>`;
  const cards=SPEC.map(([i,cls,bg,fg,c],k)=>{const p=P[i],live=p[5]==='Live',wide=cls.startsWith('h'),meta=`${p[2].split(' · ')[0]} · ${p[1]}`;
   const body=wide?`<div class="pk-l">${top(k,live)}<div class="pk-b"><h3>${short(p[0])}</h3><p>${meta}</p><p class="pk-d">${p[3]}</p><div class="pk-c">${p[4].split(' · ').slice(0,3).map(x=>`<span>${x}</span>`).join('')}</div></div></div>${win(i)}`
