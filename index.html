@@ -1537,38 +1537,61 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
 .wk.s6{grid-column:span 2}
 .wk.s7{grid-column:auto}
 @media(max-width:520px){.wk.s6{grid-column:span 1}}
-/* ══ v48: selected work — colorful tall cards (matches reference panels) ══ */
-.pk-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.7rem,1.3vw,1.1rem)}
+/* ══ v49: selected work — editorial colour tiles, mixed sizes ══ */
+.pk-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(.7rem,1.3vw,1.1rem)}
 .pk-r{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .pk-r.in{opacity:1;transform:none}
-.pk{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:clamp(400px,31vw,470px);padding:1.1rem;border-radius:20px;background:var(--tb);color:var(--tf);cursor:pointer;outline-offset:4px}
+.pk.w2{grid-column:span 2}.pk.w3{grid-column:span 3}.pk.w4{grid-column:span 4}
+.pk{--rot:-2deg;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:clamp(400px,31vw,460px);padding:1.2rem;border-radius:24px;background:var(--tb);color:var(--tf);cursor:pointer;outline-offset:4px}
 .pk.pk-r.in{transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
-.pk.pk-r.in:hover,.pk.pk-r.in:focus-visible{transform:translateY(-8px);box-shadow:0 36px 60px -34px color-mix(in srgb,var(--c) 80%,#000)}
-.pk::after{content:'';position:absolute;z-index:-1;right:-30%;top:-22%;width:90%;aspect-ratio:1;border-radius:50%;background:var(--c);opacity:.32;transition:transform .9s var(--ease);pointer-events:none}
+.pk.pk-r.in:hover,.pk.pk-r.in:focus-visible{transform:translateY(-8px);box-shadow:0 40px 70px -34px color-mix(in srgb,var(--c) 85%,#000)}
+/* depth layers: blob, dot field, outlined numeral */
+.pk::after{content:'';position:absolute;z-index:-1;right:-28%;top:-26%;width:85%;aspect-ratio:1;border-radius:50%;background:var(--c);opacity:.34;transition:transform .9s var(--ease);pointer-events:none}
 .pk:hover::after,.pk:focus-visible::after{transform:scale(1.4)}
+.pk::before{content:'';position:absolute;z-index:-1;left:0;bottom:0;width:70%;height:60%;pointer-events:none;background-image:radial-gradient(currentColor 1px,transparent 1.3px);background-size:16px 16px;opacity:.13;-webkit-mask-image:linear-gradient(45deg,#000,transparent 70%);mask-image:linear-gradient(45deg,#000,transparent 70%)}
+.pk-big{position:absolute;z-index:-1;right:1rem;bottom:-.14em;font:italic 300 clamp(7rem,13vw,12rem)/1 var(--serif);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px currentColor;opacity:.16;pointer-events:none;transition:transform .9s var(--ease),opacity .5s}
+.pk:hover .pk-big{transform:translateY(-10px);opacity:.26}
+/* top row */
 .pk-t{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
 .pk-t>div{display:flex;align-items:center;gap:.7rem}
 .pk-n{font:500 .72rem var(--mono);letter-spacing:.06em;opacity:.7}
-.pk-live{display:inline-flex;align-items:center;gap:.4rem;font:600 .64rem var(--mono);letter-spacing:.07em;text-transform:uppercase;padding:.22rem .6rem;border-radius:99px;background:rgba(0,0,0,.28);color:#fff}
+.pk-live{display:inline-flex;align-items:center;gap:.4rem;font:600 .64rem var(--mono);letter-spacing:.07em;text-transform:uppercase;padding:.25rem .65rem;border-radius:99px;background:rgba(0,0,0,.3);color:#fff}
 .pk-live i{width:6px;height:6px;border-radius:50%;background:#35D07F;animation:hvp 2s infinite}
-.pk-ar{width:36px;height:36px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font-style:normal;transition:transform .5s var(--ease),background .3s,color .3s}
+.pk-ar{width:38px;height:38px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font-style:normal;transition:transform .5s var(--ease),background .3s,color .3s}
 .pk:hover .pk-ar,.pk:focus-visible .pk-ar{transform:rotate(45deg);background:var(--tf);color:var(--tb)}
-.pk-w{position:relative;margin-top:1.2rem;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#0A0E1D;box-shadow:0 22px 40px -20px rgba(0,0,0,.5);border:1px solid rgba(0,0,0,.1);transform:rotate(-2deg);transition:transform .8s var(--ease)}
+/* screenshot window with chrome */
+.pk-w{position:relative;margin-top:1.2rem;border-radius:12px;overflow:hidden;background:#0A0E1D;box-shadow:0 26px 44px -22px rgba(0,0,0,.55);border:1px solid rgba(0,0,0,.12);transform:rotate(var(--rot));transition:transform .8s var(--ease)}
+.pk-w::before{content:'';display:block;height:18px;background:#0A0E1D;background-image:radial-gradient(circle at 10px 9px,#D61C4E 3px,transparent 3.5px),radial-gradient(circle at 22px 9px,#FFD64A 3px,transparent 3.5px),radial-gradient(circle at 34px 9px,#35D07F 3px,transparent 3.5px)}
+.pk-s{position:relative;aspect-ratio:16/10}
+.pk-s svg,.pk-s img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .pk:hover .pk-w,.pk:focus-visible .pk-w{transform:rotate(0) translateY(-6px) scale(1.03)}
-.pk-w svg,.pk-w img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+/* text */
 .pk-b{margin-top:auto;padding-top:1.4rem}
 .pk-b h3{font:italic 400 clamp(1.7rem,2.5vw,2.4rem)/1 var(--serif);letter-spacing:-.02em;color:inherit}
 .pk-b p{margin-top:.6rem;font:500 .68rem var(--mono);letter-spacing:.06em;text-transform:uppercase;opacity:.65;color:inherit}
-/* last tile: view all */
+.pk-b .pk-d{margin-top:.9rem;font:400 .95rem/1.55 var(--sans);text-transform:none;letter-spacing:0;opacity:.82;max-width:40ch;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pk-c{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.pk-c span{font:500 .64rem var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:.25rem .65rem;border-radius:99px;border:1px solid currentColor;opacity:.75}
+/* wide horizontal tiles */
+.pk.h{flex-direction:row;align-items:center;gap:clamp(1rem,2.6vw,2.4rem);min-height:clamp(320px,28vw,420px);--rot:2deg}
+.pk.h.rev{flex-direction:row-reverse;--rot:-2deg}
+.pk.h .pk-l{flex:1;min-width:0;align-self:stretch;display:flex;flex-direction:column}
+.pk.h .pk-w{flex:1.3;min-width:0;margin-top:0}
+.pk.h .pk-b h3{font-size:clamp(2.2rem,4vw,3.8rem)}
+/* view-all tile */
 .pk-all{--tb:var(--tx);--tf:var(--bg);--c:var(--d)}
-.pk-all .pk-w{display:grid;place-items:center;background:transparent;box-shadow:none;border:1px dashed currentColor;transform:none;opacity:.9}
-.pk-all .pk-w i{font-style:normal;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1;transition:transform .7s var(--ease)}
+.pk-all .pk-w{display:grid;place-items:center;aspect-ratio:16/10;background:transparent;box-shadow:none;border:1px dashed currentColor;transform:none}
+.pk-all .pk-w::before{display:none}
+.pk-all .pk-w i{font-style:normal;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1;transition:transform .7s var(--ease)}
 .pk-all:hover .pk-w{transform:none}
 .pk-all:hover .pk-w i{transform:rotate(45deg) scale(1.15)}
-@media(max-width:1000px){.pk-g{grid-template-columns:repeat(2,minmax(0,1fr))}.pk{min-height:clamp(380px,52vw,460px)}}
-@media(max-width:560px){.pk-g{grid-template-columns:1fr}.pk{min-height:0}}
+@media(max-width:1000px){.pk-g{grid-template-columns:repeat(2,minmax(0,1fr))}.pk.w2{grid-column:span 1}.pk.w3,.pk.w4{grid-column:span 2}.pk{min-height:clamp(380px,52vw,460px)}}
+@media(max-width:700px){.pk-g{grid-template-columns:1fr}.pk.w2,.pk.w3,.pk.w4{grid-column:span 1}.pk,.pk.h{min-height:0}.pk.h,.pk.h.rev{flex-direction:column;align-items:stretch;--rot:-2deg}.pk.h .pk-w{flex:none;margin-top:1.2rem}.pk.h .pk-l{align-self:auto}}
 @media(prefers-reduced-motion:reduce){.pk-r{opacity:1;transform:none}.pk-w{transform:none}}
+/* archive: 6 projects fill the grid */
+@media(min-width:901px){.wk.s4,.wk.s5{grid-column:span 2}}
 </style>
+
 
 
 
@@ -1682,7 +1705,7 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
 <div class="xm" id="dm" role="dialog" aria-modal="true" aria-label="Document"><div class="xh"><div><h3 id="dmt"></h3><span class="mono" id="dmm"></span></div><div class="xt"><a class="ic" id="dmo" href="#" target="_blank" rel="noopener">Open in tab</a><a class="ic" id="dmd" href="#" download>Download</a><button class="ic" onclick="closeDoc()" aria-label="Close">✕</button></div></div><div class="xb"><iframe id="dmf" title="Document preview"></iframe></div></div>
 <div class="xm" id="mv" role="dialog" aria-modal="true" aria-label="Mockup viewer"><div class="xh"><div><h3 id="mvt"></h3><span class="mono" id="mvm"></span></div><div class="xt"><button class="ic" onclick="mvSet(mvW/1.2)" aria-label="Zoom out">−</button><button class="ic" onclick="mvSet(mvW*1.2)" aria-label="Zoom in">+</button><button class="ic" onclick="mvSet(mvFit())">Fit</button><button class="ic" onclick="mvSet(mvN)">1:1</button><button class="ic" onclick="closeMockup()" aria-label="Close">✕</button></div></div><div class="xb" id="mvb"><img id="mvi" alt=""></div></div>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Project preview"><button class="ic" id="lbx" aria-label="Close preview" style="position:absolute;top:1rem;right:1.2rem">✕</button><div class="lbi" id="lbi"></div></div>
-<div class="md" id="md" role="dialog" aria-modal="true" aria-label="All works"><button class="ic mx" id="mx" aria-label="Close">✕</button><div class="w"><span class="mono">The full archive</span><h2 style="margin-top:.6rem">Every project, <em>no edits.</em></h2><div class="tabs"><button class="on" data-tab="p">Projects · 7</button><button data-tab="c">Website concepts · 6</button><button data-tab="l">Logo designs · 5</button></div><ul class="wl" id="wl"></ul><div class="concepts" id="cn" hidden></div><div class="lgg" id="lg" hidden></div></div></div>
+<div class="md" id="md" role="dialog" aria-modal="true" aria-label="All works"><button class="ic mx" id="mx" aria-label="Close">✕</button><div class="w"><span class="mono">The full archive</span><h2 style="margin-top:.6rem">Every project, <em>no edits.</em></h2><div class="tabs"><button class="on" data-tab="p">Projects · 6</button><button data-tab="c">Website concepts · 6</button><button data-tab="l">Logo designs · 5</button></div><ul class="wl" id="wl"></ul><div class="concepts" id="cn" hidden></div><div class="lgg" id="lg" hidden></div></div></div>
 <footer><div class="w mono"><span>© <span id="yr"></span> Gwen M. Basconcillo</span><a href="#top">Back to top ↑</a></div></footer>
 
 <script>
@@ -1798,7 +1821,7 @@ const DOC={0:['assets/rms-capstone.pdf','RM’S — Capstone Project','186 pages
 const imgTag=i=>`<img class="pi" src="${IMGS[i]}" alt="${P[i][0]}" loading="lazy" onerror="this.remove()">`;
 const COL=['--d','--b','--t'];
 P.push(['GALÁ — Explore. Enjoy.','2026','Live website','Tourism discovery site for Puerto Galera with 60 places, an interactive map, events, a travel guide and an “Ask Gali” assistant.','PHP · MySQL · JavaScript · Staff dashboard','Live']);ART[7]=W(R(0,0,800,500,'#0E6F8C',0));IMGS[7]='assets/gala-preview.jpg';
-$('#wl').innerHTML=P.map((p,i)=>[p,i]).filter(x=>x[1]!==6).map(([p,i],j)=>`<li class="wk s${j}" style="--i:${i};--c:var(${COL[i%3]})"><button class="wk-in" onclick="openLb(${i})" aria-label="Open ${p[0]}"><div class="wk-art">${ART[i]}${imgTag(i)}</div><div class="wk-top"><span class="wk-n">${String(i+1).padStart(2,'0')}</span><span class="st mono">${p[5]}</span></div><div class="wk-b"><h3>${p[0]}</h3><p class="mono">${p[2]} · ${p[1]}</p><div class="wk-x"><div><p>${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div></div></div></div></button></li>`).join('');
+$('#wl').innerHTML=P.map((p,i)=>[p,i]).filter(x=>x[1]!==5&&x[1]!==6).map(([p,i],j)=>`<li class="wk s${j}" style="--i:${i};--c:var(${COL[i%3]})"><button class="wk-in" onclick="openLb(${i})" aria-label="Open ${p[0]}"><div class="wk-art">${ART[i]}${imgTag(i)}</div><div class="wk-top"><span class="wk-n">${String(i+1).padStart(2,'0')}</span><span class="st mono">${p[5]}</span></div><div class="wk-b"><h3>${p[0]}</h3><p class="mono">${p[2]} · ${p[1]}</p><div class="wk-x"><div><p>${p[3]}</p><div class="stack">${p[4].split(' · ').map(x=>`<span>${x}</span>`).join('')}</div></div></div></div></button></li>`).join('');
 
 // ── document + mockup viewers ──
 function openDoc(src,t,m){$('#dmt').textContent=t;$('#dmm').textContent=m||'';$('#dmf').src=src+'#toolbar=1&navpanes=0&view=FitH';$('#dmo').href=src;$('#dmd').href=src;$('#dm').classList.add('open');document.body.style.overflow='hidden'}
@@ -1833,22 +1856,27 @@ s.addEventListener('scroll',u,{passive:true});addEventListener('resize',u);addEv
  function fit(){const col=nm.parentElement.clientWidth;if(!col)return;nm.style.setProperty('--nfs','100px');const w=Math.max(...ln.map(x=>x.getBoundingClientRect().width));if(!w)return;const cap=innerWidth>900?innerHeight*.19:innerWidth*.2;nm.style.setProperty('--nfs',Math.min(100*col/w*.98,cap)+'px')}
  fit();addEventListener('resize',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit)})();
 
-// ── v48 works: colorful tall cards ──
+// ── v49 works: editorial colour tiles ──
 (function(){const G=$('#sw');if(!G||typeof P==='undefined')return;
- const order=[7,0,1,2,3,4,5],pad=n=>String(n).padStart(2,'0'),short=t=>t.split(' — ')[0];
- // [background, text, accent blob]
- const PAL=[['#0F7A8A','#FFFFFF','#FFD64A'],['#F2ECE4','#2B2B2B','#C9A27A'],['#FFD64A','#1B1B1B','#B89B2E'],['#FF8FAB','#2A0A14','#FFC2D1'],['#DCE6D2','#1F3320','#A9C29A'],['#2B2B4A','#FFFFFF','#6C6AA8'],['#E5EEF4','#14303F','#9CC3D9']];
- const cards=order.map((i,k)=>{const p=P[i],[bg,fg,c]=PAL[k],live=p[5]==='Live';
-  return `<article class="pk pk-r" style="--tb:${bg};--tf:${fg};--c:${c}" data-d="${i}" role="button" tabindex="0" aria-label="Open ${p[0]}"><div class="pk-t"><div><span class="pk-n">${pad(k+1)}</span>${live?'<span class="pk-live"><i></i>Live</span>':''}</div><i class="pk-ar">↗</i></div><div class="pk-w">${ART[i]||''}<img src="${IMGS[i]}" alt="${p[0]} preview" loading="lazy" draggable="false" onerror="this.remove()"></div><div class="pk-b"><h3>${short(p[0])}</h3><p>${p[2].split(' · ')[0]} · ${p[1]}</p></div></article>`}).join('');
- const all=`<article class="pk pk-all pk-r" data-all role="button" tabindex="0" aria-label="View all works"><div class="pk-t"><div><span class="pk-n">All</span></div><i class="pk-ar">↗</i></div><div class="pk-w"><i>↗</i></div><div class="pk-b"><h3>View all works</h3><p>${order.length} projects · concepts</p></div></article>`;
+ const pad=n=>String(n).padStart(2,'0'),short=t=>t.split(' — ')[0];
+ // [project index, layout classes, bg, text, accent]
+ const SPEC=[[7,'h w4','#0F7A8A','#FFFFFF','#FFD64A'],[1,'w2','#FFD64A','#1B1B1B','#B89B2E'],[0,'w2','#F2ECE4','#2B2B2B','#C9A27A'],[2,'w2','#FF8FAB','#2A0A14','#FFC2D1'],[3,'w2','#DCE6D2','#1F3320','#A9C29A'],[4,'h rev w3','#2B2B4A','#FFFFFF','#6C6AA8']];
+ const win=i=>`<div class="pk-w"><div class="pk-s">${ART[i]||''}<img src="${IMGS[i]}" alt="${P[i][0]} preview" loading="lazy" draggable="false" onerror="this.remove()"></div></div>`;
+ const top=(k,live)=>`<div class="pk-t"><div><span class="pk-n">${pad(k+1)}</span>${live?'<span class="pk-live"><i></i>Live</span>':''}</div><i class="pk-ar">↗</i></div>`;
+ const cards=SPEC.map(([i,cls,bg,fg,c],k)=>{const p=P[i],live=p[5]==='Live',wide=cls.startsWith('h'),meta=`${p[2].split(' · ')[0]} · ${p[1]}`;
+  const body=wide?`<div class="pk-l">${top(k,live)}<div class="pk-b"><h3>${short(p[0])}</h3><p>${meta}</p><p class="pk-d">${p[3]}</p><div class="pk-c">${p[4].split(' · ').slice(0,3).map(x=>`<span>${x}</span>`).join('')}</div></div></div>${win(i)}`
+   :`${top(k,live)}${win(i)}<div class="pk-b"><h3>${short(p[0])}</h3><p>${meta}</p></div>`;
+  return `<article class="pk pk-r ${cls}" style="--tb:${bg};--tf:${fg};--c:${c}" data-d="${i}" role="button" tabindex="0" aria-label="Open ${p[0]}"><span class="pk-big" aria-hidden="true">${pad(k+1)}</span>${body}</article>`}).join('');
+ const all=`<article class="pk pk-all pk-r h w3" data-all role="button" tabindex="0" aria-label="View all works"><span class="pk-big" aria-hidden="true">+</span><div class="pk-l"><div class="pk-t"><div><span class="pk-n">All</span></div><i class="pk-ar">↗</i></div><div class="pk-b"><h3>View all works</h3><p>${SPEC.length} projects · concepts</p></div></div><div class="pk-w"><i>↗</i></div></article>`;
  G.innerHTML=cards+all;
  const go=el=>{if(el.hasAttribute('data-all'))om();else openLb(+el.dataset.d)};
  G.addEventListener('click',e=>{const c=e.target.closest('.pk');if(c)go(c)});
  G.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const c=e.target.closest('.pk');if(!c)return;e.preventDefault();go(c)});
- const els=$$('.pk-r',G),io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const c=e.target;c.style.transitionDelay=(els.indexOf(c)%4)*90+'ms';c.classList.add('in');setTimeout(()=>c.style.transitionDelay='',1200);io.unobserve(c)}),{threshold:.1});
+ const els=$$('.pk-r',G),io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const c=e.target;c.style.transitionDelay=(els.indexOf(c)%3)*90+'ms';c.classList.add('in');setTimeout(()=>c.style.transitionDelay='',1200);io.unobserve(c)}),{threshold:.1});
  els.forEach(c=>io.observe(c));
 })();
 </script>
+
 
 
 
