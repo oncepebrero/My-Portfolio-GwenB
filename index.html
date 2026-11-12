@@ -1572,17 +1572,25 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
 .pk.h .pk-w{flex:1.3;min-width:0;margin-top:0}
 .pk.h .pk-b h3{font-size:clamp(2.2rem,4vw,3.8rem)}
 /* minimal "view all works" row */
-.pk-more{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:clamp(.6rem,1.4vw,1.2rem);padding:clamp(1.4rem,3vw,2.2rem) 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);text-align:left;color:var(--tx)}
-.pk-more .mono{color:var(--tx3);flex:none}
-.pk-more .t{flex:1;font:300 clamp(2rem,5vw,4rem)/1 var(--serif);letter-spacing:-.04em;transition:transform .6s var(--ease),color .3s}
-.pk-more i{flex:none;width:clamp(2.8rem,4vw,3.6rem);aspect-ratio:1;display:grid;place-items:center;border:1px solid var(--ln);border-radius:50%;font-style:normal;font-size:1.3rem;transition:transform .6s var(--ease),background .3s,color .3s,border-color .3s}
-.pk-more:hover .t,.pk-more:focus-visible .t{transform:translateX(14px);color:var(--b)}
-.pk-more:hover i,.pk-more:focus-visible i{transform:rotate(45deg);background:var(--tx);color:var(--bg);border-color:var(--tx)}
 @media(max-width:1000px){.pk-g{grid-template-columns:repeat(2,minmax(0,1fr))}.pk.w2{grid-column:span 1}.pk.w4{grid-column:span 2}.pk{min-height:clamp(380px,52vw,460px)}.pk.h{min-height:0}}
-@media(max-width:700px){.pk-g{grid-template-columns:1fr}.pk.w2,.pk.w4{grid-column:span 1}.pk{min-height:0}.pk.h{flex-direction:column;align-items:stretch;--rot:-2deg}.pk.h .pk-w{flex:none;margin-top:1.2rem}.pk.h .pk-l{align-self:auto}.pk-more .mono{display:none}}
+@media(max-width:700px){.pk-g{grid-template-columns:1fr}.pk.w2,.pk.w4{grid-column:span 1}.pk{min-height:0}.pk.h{flex-direction:column;align-items:stretch;--rot:-2deg}.pk.h .pk-w{flex:none;margin-top:1.2rem}.pk.h .pk-l{align-self:auto}}
 @media(prefers-reduced-motion:reduce){.pk-r{opacity:1;transform:none}.pk-w{transform:none}}
 /* archive: 6 projects fill the grid */
 @media(min-width:901px){.wk.s4,.wk.s5{grid-column:span 2}}
+/* v51: AI tools */
+.ai-h{margin-top:clamp(2.5rem,5vw,4rem)}
+.ai-h .mono{color:var(--tx3)}
+.ai-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.8rem;margin-top:1.4rem}
+.ai-c{--c:var(--b);position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;gap:.9rem;padding:1.2rem;border:1px solid var(--ln);border-radius:18px;background:var(--bg2);transition:transform .5s var(--ease),border-color .3s,box-shadow .5s}
+.ai-c::before{content:'';position:absolute;z-index:-1;right:-30%;top:-40%;width:80%;aspect-ratio:1;border-radius:50%;background:var(--c);opacity:.14;transition:transform .8s var(--ease),opacity .4s;pointer-events:none}
+.ai-c:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 26px 44px -28px color-mix(in srgb,var(--c) 70%,#000)}
+.ai-c:hover::before{transform:scale(1.5);opacity:.26}
+.ai-m{width:2.8rem;height:2.8rem;border-radius:50%;display:grid;place-items:center;background:var(--c);color:#0A0E1D;font-style:normal;font-size:1.2rem;transition:transform .6s var(--ease)}
+.ai-c:hover .ai-m{transform:rotate(90deg)}
+.ai-c h4{font:400 1.3rem/1.1 var(--serif);letter-spacing:-.02em;color:var(--tx)}
+.ai-c p{font-size:.84rem;line-height:1.5;color:var(--tx2)}
+@media(max-width:1100px){.ai-g{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.ai-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 
 
@@ -1656,6 +1664,15 @@ header.hm.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-eve
     <article class="bn" style="--c:var(--t)"><div class="bn-h"><span><i></i>Test</span><span class="mono">Test run</span></div>
       <div class="bn-v tv"><p>Form rejects an empty email</p><p>Menu opens on mobile</p><p class="no">Button overlaps footer at 320px<em>bug logged</em></p></div>
       <div class="bn-b"><h3>QA &amp; Documentation</h3><p>Reproducible bugs and docs the next person can actually use.</p><ul class="tools"><li>Manual test case design</li><li>Bug reporting</li><li>Technical documentation</li></ul></div></article>
+  </div>
+  <div class="pl-h rv ai-h"><h3>AI tools <em>I work with.</em></h3><span class="mono">6 tools · every output human-checked</span></div>
+  <div class="ai-g rv">
+    <div class="ai-c" style="--c:var(--b)"><i class="ai-m">✺</i><h4>ChatGPT</h4><p>Brainstorming, drafting copy and debugging help.</p></div>
+    <div class="ai-c" style="--c:var(--d)"><i class="ai-m">✳</i><h4>Claude</h4><p>Long-form writing, code review and documentation.</p></div>
+    <div class="ai-c" style="--c:var(--t)"><i class="ai-m">✦</i><h4>Gemini</h4><p>Research, quick lookups and idea comparison.</p></div>
+    <div class="ai-c" style="--c:var(--b)"><i class="ai-m">◎</i><h4>DeepSeek</h4><p>Code reasoning and step-by-step problem solving.</p></div>
+    <div class="ai-c" style="--c:var(--d)"><i class="ai-m">↖</i><h4>Cursor</h4><p>AI-assisted coding right inside the editor.</p></div>
+    <div class="ai-c" style="--c:var(--t)"><i class="ai-m">♥</i><h4>Lovable AI</h4><p>Prompt-to-app prototyping to test ideas fast.</p></div>
   </div>
   <div class="pl-h rv" id="plh"><h3>How it <em>gets made.</em></h3><span class="ok">✓ QA passed</span></div>
   <div class="pl rv" id="proc">
@@ -1862,9 +1879,8 @@ s.addEventListener('scroll',u,{passive:true});addEventListener('resize',u);addEv
   const body=wide?`<div class="pk-l">${top(k,live)}<div class="pk-b"><h3>${short(p[0])}</h3><p>${meta}</p><p class="pk-d">${p[3]}</p><div class="pk-c">${p[4].split(' · ').slice(0,3).map(x=>`<span>${x}</span>`).join('')}</div></div></div>${win(i)}`
    :`${top(k,live)}${win(i)}<div class="pk-b"><h3>${short(p[0])}</h3><p>${meta}</p></div>`;
   return `<article class="pk pk-r ${cls}" style="--tb:${bg};--tf:${fg};--c:${c}" data-d="${i}" role="button" tabindex="0" aria-label="Open ${p[0]}"><span class="pk-big" aria-hidden="true">${pad(k+1)}</span>${body}</article>`}).join('');
- const more=`<button type="button" class="pk-more pk-r" data-all><span class="mono">${total} projects · concepts</span><span class="t">View all works</span><i>↗</i></button>`;
- G.innerHTML=cards+more;
- G.addEventListener('click',e=>{if(e.target.closest('.pk-more')){om();return}const c=e.target.closest('.pk');if(c)openLb(+c.dataset.d)});
+ G.innerHTML=cards;
+ G.addEventListener('click',e=>{const c=e.target.closest('.pk');if(c)openLb(+c.dataset.d)});
  G.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const c=e.target.closest('.pk');if(!c)return;e.preventDefault();openLb(+c.dataset.d)});
  const els=$$('.pk-r',G),io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const c=e.target;c.style.transitionDelay=(els.indexOf(c)%3)*90+'ms';c.classList.add('in');setTimeout(()=>c.style.transitionDelay='',1200);io.unobserve(c)}),{threshold:.1});
  els.forEach(c=>io.observe(c));
